@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Anuj Wagmore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("7aNbzIs6XhUuOYNLy");
+        })();
+    </script>
+</head>
+
+
+
+<body>
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <header class="hero" id="home">
+        <div id="particles-js"></div>
+
+        <div class="hero-content">
+            <h1>Hello, I'm <span>Anuj</span></h1>
+            <h2 id="typing"></h2>
+
+            <p>
+                A passionate <b>AI Learner</b> & <b>ML Enthusiast</b>
+                creating modern, scalable and beautiful applications  that helpful for real users.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn primary">Hire Me</a>
+                <a href="/project.html" class="btn secondary">My Projects</a>
+            </div>
+
+            <div class="social-icons">
+                <a target="_blank"  href="http://github.com/Anuj04432"><i class="fab fa-github"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/anuj-wagmore-9a3702390/"><i class="fab fa-linkedin"></i></a>
+                <a target="_blank" href="https://www.instagram.com/syntax_044/"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-img">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="profile">
+        </div>
+    </header>
+
+
+
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo">Anuj Wagmore</div>
+
+
+        <ul class="nav-links">
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="/project.html" target="_blank">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section reveal">
+        <h2>About Me</h2>
+
+        <div class="about-container">
+            <!-- <div class="about-img">
+                <img src="images/about.png" alt="Developer Illustration">
+            </div> -->
+
+            <div class="about-text">
+                <h3>Who Am I?</h3>
+
+                <p>
+                    I'm <b>Anuj</b>, a passionate AI Learner and Machine Learning enthusiast.
+                    I enjoy building clean, responsive software applications and working on data-driven solutions.
+                </p>
+
+                <p>
+                    Currently pursuing <b>B.Tech in Computer Science (AI/ML)</b>,
+                    I focus on improving my development skills and learning new technologies.
+                </p>
+                
+            
+                <div class="about-tags">
+                    <span>📊 Data Science</span>
+                    <span>🤖 Machine Learning</span>
+                    <span>🚀 Problem Solver</span>
+                    <span>🧑‍🎓 Learner</span>
+                </div>
+
+                <a href="resume.pdf" download class="resume-btn">
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills-section">
+        <h2> Skills</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h4>HTML</h4>
+                <div class="skill-bar">
+                    <div class="skill-fill html" data-percent="90">0%</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h4>CSS</h4>
+                <div class="skill-bar">
+                    <div class="skill-fill css" data-percent="80">0%</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-js"></i>
+                <h4>JavaScript</h4>
+                <div class="skill-bar">
+                    <div class="skill-fill js" data-percent="75">0%</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-brands fa-python"></i>
+                <h4>Python</h4>
+                <div class="skill-bar">
+                    <div class="skill-fill python" data-percent="85">0%</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-brain"></i>
+                <h4>Machine Learning</h4>
+                <div class="skill-bar">
+                    <div class="skill-fill ml" data-percent="70">0%</div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-database"></i>
+                <h4>SQL</h4>
+                <div class="skill-bar">
+                    <div class="skill-fill sql" data-percent="40">0%</div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-envelope"></i>
+                <h4>PowerBI</h4>
+                <div class="skill-bar">
+                    <div class="skill-fill PowerBI" data-percent="85">0%</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <!-- certificates -->
+    <section id="certificates" class="cert-section">
+        <h2>My Certificates</h2>
+
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>Google Cloud Arcade</h3>
+                <p>Hands-on Cloud Labs & Challenges</p>
+                <a href="#" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="cert-card">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python Certification</h3>
+                <p>Python Programming Fundamentals</p>
+                <a href="https://drive.google.com/file/d/1pQZ2qqpyapjg-f9HFYX2Zonl9V3uNDUH/view?usp=drive_link"
+                    target="_blank">View Certificate</a>
+            </div>
+
+            <div class="cert-card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Machine Learning</h3>
+                <p>ML Concepts & Applications</p>
+                <a href="#" target="_blank">View Certificate</a>
+            </div>
+
+            <div class="cert-card">
+                <i class="fa-solid fa-database"></i>
+                <h3>SQL & Databases</h3>
+                <p>Database Design & Queries</p>
+                <a href="#" target="_blank">View Certificate</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+
+        <div class="contact-wrapper">
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>Feel free to reach out for collaborations or just a friendly hello 👋</p>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>anujwagmore8@gmail.com</span>
+                </div>
+
+                <div class="info-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>India</span>
+                </div>
+
+                <div class="info-box">
+                    <i class="fa-brands fa-github"></i>
+                    <span><a target="_blank" href="http://github.com/Anuj04432">Github.com/Anuj04432</a></span>
+                </div>
+
+                <div class="info-box">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span><a target="_blank"  href="https://www.linkedin.com/in/anuj-wagmore-874a883a7/">linkedin.com/anuj-wagmore</a></span>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+           <form class="contact-form" onsubmit="sendMessage(event)">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+           </form>
+
+
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <p>
+            © <span id="year"></span> Anuj Wagmore. All Rights Reserved.
+        </p>
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+
+
+    <button id="backToTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+</body>
+
+</html>
