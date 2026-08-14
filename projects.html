@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering Projects // Anuj Wagmore</title>
+  <meta name="description" content="Hanging Project Matrix - AI Models, Machine Learning Pipelines, Local LLMs, and Software Applications by Anuj Wagmore." />
+
+  <!-- Core Design System & Hanging Physics Animations -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Dynamic Neural Networks & Twinkling Stars Canvas -->
+  <canvas id="neuralCanvas"></canvas>
+
+  <!-- Cyber Background Grid Overlay -->
+  <div class="cyber-bg-grid" aria-hidden="true"></div>
+
+  <!-- STICKY NAVBAR -->
+  <header class="cyber-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" title="Return to Home">
+        <span class="brand-badge">AI CORE</span>
+        <span>anuj<span class="prompt">@</span>ai-workspace:~/projects$</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home" class="nav-link"><span class="index">00.</span> Home</a></li>
+        <li><a href="index.html#about" class="nav-link"><span class="index">01.</span> About</a></li>
+        <li><a href="index.html#skills" class="nav-link"><span class="index">02.</span> Skills</a></li>
+        <li><a href="projects.html" class="nav-link active"><span class="index">03.</span> Projects</a></li>
+        <li><a href="index.html#contact" class="nav-link"><span class="index">04.</span> Contact</a></li>
+      </ul>
+
+      <!-- Action Items -->
+      <div class="nav-actions">
+        <a href="https://github.com/Anuj04432" target="_blank" rel="noopener noreferrer" class="github-nav-btn" title="GitHub Profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-terminal"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN WRAPPER -->
+  <main style="padding: 3.5rem 0 6rem;">
+    <div class="container">
+      
+      <!-- Page Header -->
+      <div class="mono-heading">MACHINE LEARNING & SOFTWARE PROJECTS</div>
+      <h1 class="section-title">
+        <span class="prompt-symbol">&gt;</span> Featured Projects
+      </h1>
+      <p class="section-subtitle">
+        Production AI models, local LLM orchestration systems, and interactive analytical tools. Hover over cards to interact with the suspended pendulum physics.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.5rem;">
+        <button class="btn-terminal primary filter-tag-btn active" data-filter="all">
+          [ ALL_PROJECTS (8) ]
+        </button>
+        <button class="btn-terminal filter-tag-btn" data-filter="ai">
+          [ AI & LOCAL LLMS ]
+        </button>
+        <button class="btn-terminal filter-tag-btn" data-filter="ml">
+          [ MACHINE LEARNING & NLP ]
+        </button>
+        <button class="btn-terminal filter-tag-btn" data-filter="data">
+          [ DATA SCIENCE & ANALYTICS ]
+        </button>
+        <button class="btn-terminal filter-tag-btn" data-filter="tools">
+          [ TOOLS & WEB APPS ]
+        </button>
+      </div>
+
+      <!-- HANGING CARDS CONTAINER -->
+      <div class="hanging-container" id="projectsGrid">
+
+        <!-- CARD 1: Offline AI Chatbot -->
+        <div class="hanging-card-wrapper reveal-node" data-category="ai llm">
+          <!-- Suspension Wires -->
+          <div class="suspension-wires">
+            <div class="anchor-mount left"></div>
+            <div class="wire left"></div>
+            <div class="anchor-mount right"></div>
+            <div class="wire right"></div>
+          </div>
+
+          <!-- The Hanging Card -->
+          <div class="hanging-card">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="terminal-title">node://offline_ai_chatbot</div>
+            </div>
+
+            <!-- Scrollable/Swipeable Image Gallery -->
+            <div class="card-gallery-wrapper">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="images/chatbot.png" alt="Offline AI Chatbot UI" loading="lazy" />
+                </div>
+                <div class="gallery-slide">
+                  <img src="images/about.png" alt="Offline AI Architecture Diagram" loading="lazy" />
+                </div>
+              </div>
+              <button class="gallery-btn prev" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gallery-btn next" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active"></span>
+                <span class="gallery-dot"></span>
+              </div>
+            </div>
+
+            <!-- Card Body with Coding Font -->
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <i class="fa-solid fa-robot" style="color: var(--neon-cyan);"></i>
+                  <h3 style="font-size: 1.2rem; color: #fff;">Offline AI Assistant</h3>
+                </div>
+                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  Offline AI Chatbot powered by Ollama. Enables users to run and switch between multiple local LLMs locally with zero internet dependency, ensuring maximum data privacy.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Ollama</span>
+                  <span class="skill-meta-tag" style="color: var(--neon-green);">Python</span>
+                  <span class="skill-meta-tag">Local LLM</span>
+                  <span class="skill-meta-tag">Streamlit</span>
+                </div>
+              </div>
+
+              <!-- Action Links -->
+              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
+                <a href="https://github.com/Anuj04432/Offline_AI_Assistant.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-brands fa-github"></i> REPO
+                </a>
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: PriceSense -->
+        <div class="hanging-card-wrapper reveal-node delay-1" data-category="ai tools">
+          <div class="suspension-wires">
+            <div class="anchor-mount left"></div>
+            <div class="wire left"></div>
+            <div class="anchor-mount right"></div>
+            <div class="wire right"></div>
+          </div>
+
+          <div class="hanging-card">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="terminal-title">node://pricesense_engine</div>
+            </div>
+
+            <div class="card-gallery-wrapper">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="images/pricesense.png" alt="PriceSense Recommendation System" loading="lazy" />
+                </div>
+              </div>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active"></span>
+              </div>
+            </div>
+
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <i class="fa-solid fa-magnifying-glass-dollar" style="color: var(--neon-green);"></i>
+                  <h3 style="font-size: 1.2rem; color: #fff;">PriceSense Engine</h3>
+                </div>
+                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  Electronic Items Recommendation System using Python & SerpAPI. Gathers product pricing in real time, computes customer sentiment scores, and recommends best buying stores.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Python</span>
+                  <span class="skill-meta-tag" style="color: var(--neon-green);">SerpAPI</span>
+                  <span class="skill-meta-tag">Recommendation</span>
+                  <span class="skill-meta-tag">Sentiment</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
+                <a href="https://github.com/Anuj04432/PriceSense.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-brands fa-github"></i> REPO
+                </a>
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Prompt Optimizer Middleware -->
+        <div class="hanging-card-wrapper reveal-node delay-2" data-category="ai llm">
+          <div class="suspension-wires">
+            <div class="anchor-mount left"></div>
+            <div class="wire left"></div>
+            <div class="anchor-mount right"></div>
+            <div class="wire right"></div>
+          </div>
+
+          <div class="hanging-card">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="terminal-title">node://prompt_optimizer</div>
+            </div>
+
+            <div class="card-gallery-wrapper">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="images/pricesense.png" alt="Prompt Optimizer Middleware" loading="lazy" />
+                </div>
+              </div>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active"></span>
+              </div>
+            </div>
+
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <i class="fa-solid fa-microchip" style="color: var(--neon-amber);"></i>
+                  <h3 style="font-size: 1.2rem; color: #fff;">Prompt Optimizer</h3>
+                </div>
+                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  Middleware AI tool sitting between the AI model and user inputs. Analyzes context and refines prompts dynamically to maximize inference accuracy and output fidelity.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Python</span>
+                  <span class="skill-meta-tag" style="color: var(--neon-amber);">LLM Middleware</span>
+                  <span class="skill-meta-tag">Prompt Ops</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
+                <a href="https://github.com/Anuj04432/Prompt_Optimizer.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-brands fa-github"></i> REPO
+                </a>
+                <a href="#" class="btn-terminal" style="flex: 1; font-size: 0.78rem; opacity: 0.6; cursor: not-allowed;">
+                  <i class="fa-solid fa-lock"></i> PRIVATE
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Fake News Detection -->
+        <div class="hanging-card-wrapper reveal-node" data-category="ml nlp">
+          <div class="suspension-wires">
+            <div class="anchor-mount left"></div>
+            <div class="wire left"></div>
+            <div class="anchor-mount right"></div>
+            <div class="wire right"></div>
+          </div>
+
+          <div class="hanging-card">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="terminal-title">node://fake_news_detector</div>
+            </div>
+
+            <div class="card-gallery-wrapper">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="images/home.png" alt="Fake News Detection System" loading="lazy" />
+                </div>
+              </div>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active"></span>
+              </div>
+            </div>
+
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <i class="fa-solid fa-newspaper" style="color: var(--neon-cyan);"></i>
+                  <h3 style="font-size: 1.2rem; color: #fff;">Fake News Detection</h3>
+                </div>
+                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  Machine learning fake news classifier built with Python and Logistic Regression. Uses NLP vectorization to predict authenticity of news articles with high precision.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Python</span>
+                  <span class="skill-meta-tag" style="color: var(--neon-green);">NLP</span>
+                  <span class="skill-meta-tag">Scikit-Learn</span>
+                  <span class="skill-meta-tag">Streamlit</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
+                <a href="https://github.com/Anuj04432/Fake_News_Detection.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-brands fa-github"></i> REPO
+                </a>
+                <a href="https://fakenewsdetection-anuj.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5: AI To-Do List & Voice Handler -->
+        <div class="hanging-card-wrapper reveal-node delay-1" data-category="ai tools">
+          <div class="suspension-wires">
+            <div class="anchor-mount left"></div>
+            <div class="wire left"></div>
+            <div class="anchor-mount right"></div>
+            <div class="wire right"></div>
+          </div>
+
+          <div class="hanging-card">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="terminal-title">node://ai_task_handler</div>
+            </div>
+
+            <div class="card-gallery-wrapper">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="images/todo.png" alt="AI To-Do Task Handler" loading="lazy" />
+                </div>
+              </div>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active"></span>
+              </div>
+            </div>
+
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <i class="fa-solid fa-list-check" style="color: var(--neon-green);"></i>
+                  <h3 style="font-size: 1.2rem; color: #fff;">AI Task Handler</h3>
+                </div>
+                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  Full-stack AI task management app featuring voice input/output for hands-free creation, multilingual NLU commands, SQLite storage, and APScheduler automated reminders.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Voice I/O</span>
+                  <span class="skill-meta-tag" style="color: var(--neon-green);">Multilingual NLU</span>
+                  <span class="skill-meta-tag">SQLite</span>
+                  <span class="skill-meta-tag">APScheduler</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
+                <a href="https://github.com/Anuj04432/AI_Task_Handler.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-brands fa-github"></i> REPO
+                </a>
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6: Personal Expense Tracker -->
+        <div class="hanging-card-wrapper reveal-node delay-2" data-category="tools data">
+          <div class="suspension-wires">
+            <div class="anchor-mount left"></div>
+            <div class="wire left"></div>
+            <div class="anchor-mount right"></div>
+            <div class="wire right"></div>
+          </div>
+
+          <div class="hanging-card">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="terminal-title">node://expense_tracker</div>
+            </div>
+
+            <div class="card-gallery-wrapper">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="images/project4.png" alt="Personal Expense Tracker" loading="lazy" />
+                </div>
+              </div>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active"></span>
+              </div>
+            </div>
+
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <i class="fa-solid fa-indian-rupee-sign" style="color: var(--neon-amber);"></i>
+                  <h3 style="font-size: 1.2rem; color: #fff;">Expense Tracker</h3>
+                </div>
+                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  Streamlit and Python financial manager to record income/expenses, set dynamic category budgets, and visualize spending distributions on PC and mobile devices.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Streamlit</span>
+                  <span class="skill-meta-tag" style="color: var(--neon-green);">Python</span>
+                  <span class="skill-meta-tag">Data Viz</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
+                <a href="https://github.com/Anuj04432/Personal-Expense-Tracker" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-brands fa-github"></i> REPO
+                </a>
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 7: Covid Dashboard & Data Analytics -->
+        <div class="hanging-card-wrapper reveal-node" data-category="data">
+          <div class="suspension-wires">
+            <div class="anchor-mount left"></div>
+            <div class="wire left"></div>
+            <div class="anchor-mount right"></div>
+            <div class="wire right"></div>
+          </div>
+
+          <div class="hanging-card">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="terminal-title">node://covid_data_analytics</div>
+            </div>
+
+            <!-- Multi-Image Gallery -->
+            <div class="card-gallery-wrapper">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="images/dashboard.png" alt="Data Analytics Dashboard View 1" loading="lazy" />
+                </div>
+                <div class="gallery-slide">
+                  <img src="images/dashboard_adv.png" alt="Data Analytics Dashboard Advanced View" loading="lazy" />
+                </div>
+              </div>
+              <button class="gallery-btn prev" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="gallery-btn next" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active"></span>
+                <span class="gallery-dot"></span>
+              </div>
+            </div>
+
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <i class="fa-solid fa-chart-line" style="color: var(--neon-cyan);"></i>
+                  <h3 style="font-size: 1.2rem; color: #fff;">Data Analytics & Viz</h3>
+                </div>
+                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  Comprehensive data analysis and statistical visualization using Python (Pandas, Matplotlib, Seaborn) translating raw multi-source epidemiological metrics into actionable charts.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Pandas</span>
+                  <span class="skill-meta-tag" style="color: var(--neon-green);">Matplotlib</span>
+                  <span class="skill-meta-tag">Seaborn</span>
+                  <span class="skill-meta-tag">EDA</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
+                <a href="https://github.com/Anuj04432/Covid_Dashboard" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-brands fa-github"></i> REPO
+                </a>
+                <a href="images/dashboard_adv.png" target="_blank" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-solid fa-image"></i> VIEW CHARTS
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 8: Personal Portfolio Terminal Interface -->
+        <div class="hanging-card-wrapper reveal-node delay-1" data-category="tools">
+          <div class="suspension-wires">
+            <div class="anchor-mount left"></div>
+            <div class="wire left"></div>
+            <div class="anchor-mount right"></div>
+            <div class="wire right"></div>
+          </div>
+
+          <div class="hanging-card">
+            <div class="terminal-header">
+              <div class="terminal-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <div class="terminal-title">node://portfolio_terminal</div>
+            </div>
+
+            <div class="card-gallery-wrapper">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="images/Screenshot 2026-04-03 215729.png" alt="Portfolio Terminal Interface" loading="lazy" />
+                </div>
+              </div>
+              <div class="gallery-indicators">
+                <span class="gallery-dot active"></span>
+              </div>
+            </div>
+
+            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <i class="fa-solid fa-terminal" style="color: var(--neon-green);"></i>
+                  <h3 style="font-size: 1.2rem; color: #fff;">Cyber Terminal Portfolio</h3>
+                </div>
+                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
+                  AI Engineer personal workspace landing page featuring retro xterm raster typography, hanging cards pendulum physics, and CLI two-way communication channel.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
+                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">HTML5/CSS3</span>
+                  <span class="skill-meta-tag" style="color: var(--neon-green);">JavaScript</span>
+                  <span class="skill-meta-tag">Cyberpunk</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
+                <a href="https://github.com/Anuj04432/Portfolio" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-brands fa-github"></i> REPO
+                </a>
+                <a href="https://anujwagmore.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Deep Dive Inspector Modal -->
+  <div class="cyber-modal-overlay" id="projectModal" role="dialog" aria-modal="true">
+    <div class="cyber-auth-modal" style="max-width: 650px; border-color: var(--neon-cyan); box-shadow: 0 0 35px var(--neon-cyan-glow);">
+      <div class="auth-header" style="border-bottom-color: var(--border-dim);">
+        <div class="auth-title" style="color: var(--neon-cyan);">
+          <i class="fa-solid fa-folder-open"></i> <span id="modalTitle">PROJECT_INSPECTOR</span>
+        </div>
+        <button class="modal-close-btn" id="closeProjectModal" aria-label="Close Inspector">&times;</button>
+      </div>
+
+      <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+        <div style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-subtle);">
+          <img id="modalImg" src="images/chatbot.png" alt="Project Preview" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <p id="modalDesc" style="font-family: var(--font-code); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;"></p>
+        <div id="modalTech" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+          <a id="modalGit" href="#" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1;">
+            <i class="fa-brands fa-github"></i> GITHUB REPO
+          </a>
+          <a id="modalLive" href="#" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> LAUNCH LIVE
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <span>&copy; 2026 Anuj Wagmore. Built with pure xterm bitmap architecture & Cyberpunk aesthetic.</span>
+        </div>
+        <div>
+          <a href="index.html" style="color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.85rem;">
+            &lt; RETURN_TO_ROOT /&gt;
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>
