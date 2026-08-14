@@ -84,10 +84,26 @@
 
 .hanging-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
   gap: 3.5rem 2rem;
   padding-top: 2rem;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .hanging-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem 1rem;
+    padding-top: 1rem;
+  }
+  .suspension-wires {
+    height: 28px;
+  }
+  .gallery-btn {
+    opacity: 0.85;
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .hanging-card-wrapper {
