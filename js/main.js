@@ -31,7 +31,8 @@ function initNavbar() {
   });
 
   if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener("click", () => {
+    mobileBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
       navLinks.classList.toggle("active");
     });
 
@@ -40,6 +41,13 @@ function initNavbar() {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
       });
+    });
+
+    // Close on outside click
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+        navLinks.classList.remove("active");
+      }
     });
   }
 
