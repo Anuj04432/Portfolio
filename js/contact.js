@@ -1,84 +1,90 @@
 /**
- * AI ENGINEER TERMINAL / CYBERCORE - CONTACT MODULE & CLI HOOK
- * Author: Anuj Wagmore
+ * ANUJ WAGMORE - CONTACT MODULE
+ * Integrates EmailJS form submission with real-time feedback and state management.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  initContactTerminal();
+  initContactForm();
 });
 
-function initContactTerminal() {
-  const form = document.getElementById("cliContactForm");
-  const consoleFeedback = document.getElementById("cliFeedbackConsole");
-  const submitBtn = document.getElementById("cliSubmitBtn");
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  const feedback = document.getElementById("contactFeedback");
+  const submitBtn = document.getElementById("contactSubmitBtn");
 
-  if (!form || !consoleFeedback) return;
+  if (!form || !feedback) return;
 
-  // Initialize EmailJS public key
+  // Initialize EmailJS with public key
   if (typeof emailjs !== "undefined") {
     try {
       emailjs.init("7aNbzIs6XhUuOYNLy");
-      logToConsole("COMMS_BUS initialized. Socket ready on port :443");
     } catch (err) {
-      console.warn("EmailJS init note:", err);
+      console.warn("EmailJS init warning:", err);
     }
   }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const nameInput = document.getElementById("cliName");
-    const emailInput = document.getElementById("cliEmail");
-    const messageInput = document.getElementById("cliMessage");
+    const nameInput = document.getElementById("contactName");
+    const emailInput = document.getElementById("contactEmail");
+    const messageInput = document.getElementById("contactMessage");
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
+    const name = nameInput ? nameInput.value.trim() : "";
+    const email = emailInput ? emailInput.value.trim() : "";
+    const message = messageInput ? messageInput.value.trim() : "";
 
     if (!name || !email || !message) {
-      logToConsole("Please fill in all fields (Name, Email, Message).", "error");
+      showFeedback("Please complete all fields before sending.", "error");
       return;
     }
 
-    // UI Loading state
+    // Set UI loading state
+    const originalBtnContent = submitBtn ? submitBtn.innerHTML : "Send Message";
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> SENDING...`;
+      submitBtn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...`;
     }
 
-    logToConsole(`Connecting to mail service...`);
+    showFeedback("Sending your message...", "info");
 
     try {
-      // Backend EmailJS call
-      const response = await emailjs.send(
+      if (typeof emailjs === "undefined") {
+        throw new Error("Email service is currently offline. Please email directly.");
+      }
+
+      await emailjs.send(
         "service_n4g2mdg",
         "template_5tgs2tm",
         {
           name: name,
           email: email,
           message: message,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toLocaleString()
         },
         "7aNbzIs6XhUuOYNLy"
       );
 
-      console.log("EmailJS SUCCESS:", response);
-      logToConsole(`Message sent successfully! Anuj will reply to you soon.`, "success");
+      showFeedback("Thank you! Your message has been sent successfully. I'll get back to you soon.", "success");
       form.reset();
     } catch (error) {
-      console.error("EmailJS Error:", error);
-      logToConsole(`Failed to send. Please reach out directly to anujwagmore8@gmail.com`, "error");
+      console.error("EmailJS submission error:", error);
+      showFeedback("Failed to send message. Please reach out directly to anujwagmore8@gmail.com", "error");
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> [ SEND_MESSAGE ]`;
+        submitBtn.innerHTML = originalBtnContent;
       }
     }
   });
 
-  function logToConsole(message, statusClass = "") {
-    const timestamp = new Date().toLocaleTimeString();
-    consoleFeedback.className = "cli-console-feedback " + statusClass;
-    consoleFeedback.innerHTML = `<span style="color: var(--neon-cyan); margin-right: 8px;">[${timestamp}]</span> <span>${message}</span>`;
+  function showFeedback(message, type) {
+    feedback.className = `form-feedback active ${type}`;
+    let iconClass = "fa-solid fa-circle-info";
+    if (type === "success") iconClass = "fa-solid fa-circle-check";
+    if (type === "error") iconClass = "fa-solid fa-triangle-exclamation";
+    if (type === "info") iconClass = "fa-solid fa-circle-notch fa-spin";
+
+    feedback.innerHTML = `<i class="${iconClass}"></i> <span>${message}</span>`;
   }
 }
