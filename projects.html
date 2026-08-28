@@ -3,622 +3,415 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engineering Projects // Anuj Wagmore</title>
-  <meta name="description" content="Hanging Project Matrix - AI Models, Machine Learning Pipelines, Local LLMs, and Software Applications by Anuj Wagmore." />
+  <title>Featured Projects — Anuj Wagmore | AI & Machine Learning Engineer</title>
+  <meta name="description" content="Explore AI projects, local LLM architectures, machine learning classifiers, and analytical tools built by Anuj Wagmore." />
 
-  <!-- Core Design System & Hanging Physics Animations -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/animations.css" />
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
 </head>
 <body>
 
-  <!-- Dynamic Neural Networks & Twinkling Stars Canvas -->
-  <canvas id="neuralCanvas"></canvas>
+  <!-- Ambient Drifting Gradient Blobs & Texture -->
+  <div class="ambient-bg-container" aria-hidden="true">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+  </div>
+  <div class="ambient-grid-mesh" aria-hidden="true"></div>
 
-  <!-- Cyber Background Grid Overlay -->
-  <div class="cyber-bg-grid" aria-hidden="true"></div>
-
-  <!-- STICKY NAVBAR -->
-  <header class="cyber-navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand" title="Return to Home">
-        <span class="brand-badge">AI CORE</span>
-        <span>anuj<span class="prompt">@</span>ai-workspace:~/projects$</span>
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html#home" class="nav-link"><span class="index">00.</span> Home</a></li>
-        <li><a href="index.html#about" class="nav-link"><span class="index">01.</span> About</a></li>
-        <li><a href="index.html#skills" class="nav-link"><span class="index">02.</span> Skills</a></li>
-        <li><a href="projects.html" class="nav-link active"><span class="index">03.</span> Projects</a></li>
-        <li><a href="index.html#contact" class="nav-link"><span class="index">04.</span> Contact</a></li>
-      </ul>
-
-      <!-- Action Items -->
-      <div class="nav-actions">
-        <a href="https://github.com/Anuj04432" target="_blank" rel="noopener noreferrer" class="github-nav-btn" title="GitHub Profile">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
+  <!-- Sticky Glass Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-wrapper">
+      <nav class="nav-inner" aria-label="Main Navigation">
+        <a href="index.html" class="nav-brand" title="Anuj Wagmore Home">
+          <span>Anuj Wagmore</span>
+          <span class="brand-badge">AI Lab</span>
         </a>
-        <button class="mobile-toggle" aria-label="Toggle Navigation">
-          <i class="fa-solid fa-terminal"></i>
-        </button>
-      </div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+          <li><a href="projects.html" class="nav-link active">Projects</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action Items -->
+        <div class="nav-actions">
+          <a href="https://github.com/Anuj04432" target="_blank" rel="noopener noreferrer" class="nav-social-btn" title="GitHub Profile" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- MAIN WRAPPER -->
-  <main style="padding: 3.5rem 0 6rem;">
-    <div class="container">
-      
-      <!-- Page Header -->
-      <div class="mono-heading">MACHINE LEARNING & SOFTWARE PROJECTS</div>
-      <h1 class="section-title">
-        <span class="prompt-symbol">&gt;</span> Featured Projects
-      </h1>
-      <p class="section-subtitle">
-        Production AI models, local LLM orchestration systems, and interactive analytical tools. Hover over cards to interact with the suspended pendulum physics.
-      </p>
+  <main class="main-content">
 
-      <!-- Category Filter Tabs -->
-      <div class="project-filter-tabs">
-        <button class="btn-terminal primary filter-tag-btn active" data-filter="all">
-          [ ALL_PROJECTS (8) ]
-        </button>
-        <button class="btn-terminal filter-tag-btn" data-filter="ai">
-          [ AI & LOCAL LLMS ]
-        </button>
-        <button class="btn-terminal filter-tag-btn" data-filter="ml">
-          [ MACHINE LEARNING & NLP ]
-        </button>
-        <button class="btn-terminal filter-tag-btn" data-filter="data">
-          [ DATA SCIENCE & ANALYTICS ]
-        </button>
-        <button class="btn-terminal filter-tag-btn" data-filter="tools">
-          [ TOOLS & WEB APPS ]
-        </button>
-      </div>
+    <!-- ========================================================================
+         PROJECTS SHOWCASE SECTION
+         ======================================================================== -->
+    <section class="projects-section" style="padding-top: calc(var(--nav-height) + 4rem); min-height: 85vh;">
+      <div class="container">
 
-      <!-- HANGING CARDS CONTAINER -->
-      <div class="hanging-container" id="projectsGrid">
+        <!-- Section Header -->
+        <div class="section-header-center reveal">
+          <div class="section-eyebrow">Portfolio Work</div>
+          <h1 class="section-heading">Featured Projects</h1>
+          <p class="section-subtitle">
+            Explore real-world machine learning models, offline local LLM architectures, data analytics dashboards, and productivity tools.
+          </p>
+        </div>
 
-        <!-- CARD 1: Offline AI Chatbot -->
-        <div class="hanging-card-wrapper reveal-node" data-category="ai llm">
-          <!-- Suspension Wires -->
-          <div class="suspension-wires">
-            <div class="anchor-mount left"></div>
-            <div class="wire left"></div>
-            <div class="anchor-mount right"></div>
-            <div class="wire right"></div>
-          </div>
-
-          <!-- The Hanging Card -->
-          <div class="hanging-card">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">node://offline_ai_chatbot</div>
-            </div>
-
-            <!-- Scrollable/Swipeable Image Gallery -->
-            <div class="card-gallery-wrapper">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="images/chatbot.png" alt="Offline AI Chatbot UI" loading="lazy" />
-                </div>
-                <div class="gallery-slide">
-                  <img src="images/about.png" alt="Offline AI Architecture Diagram" loading="lazy" />
-                </div>
-              </div>
-              <button class="gallery-btn prev" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="gallery-btn next" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
-              <div class="gallery-indicators">
-                <span class="gallery-dot active"></span>
-                <span class="gallery-dot"></span>
-              </div>
-            </div>
-
-            <!-- Card Body with Coding Font -->
-            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-              <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                  <i class="fa-solid fa-robot" style="color: var(--neon-cyan);"></i>
-                  <h3 style="font-size: 1.2rem; color: #fff;">Offline AI Assistant</h3>
-                </div>
-                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                  Offline AI Chatbot powered by Ollama. Enables users to run and switch between multiple local LLMs locally with zero internet dependency, ensuring maximum data privacy.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Ollama</span>
-                  <span class="skill-meta-tag" style="color: var(--neon-green);">Python</span>
-                  <span class="skill-meta-tag">Local LLM</span>
-                  <span class="skill-meta-tag">Streamlit</span>
-                </div>
-              </div>
-
-              <!-- Action Links -->
-              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
-                <a href="https://github.com/Anuj04432/Offline_AI_Assistant.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-brands fa-github"></i> REPO
-                </a>
-                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
-                </a>
-              </div>
-            </div>
+        <!-- Filter Tabs -->
+        <div class="filter-tabs-wrapper reveal">
+          <div class="filter-tabs" role="tablist" aria-label="Filter Projects">
+            <button class="filter-tab-btn active" data-filter="all" role="tab" aria-selected="true">All (8)</button>
+            <button class="filter-tab-btn" data-filter="ai" role="tab" aria-selected="false">AI & Local LLMs</button>
+            <button class="filter-tab-btn" data-filter="ml" role="tab" aria-selected="false">Machine Learning & NLP</button>
+            <button class="filter-tab-btn" data-filter="data" role="tab" aria-selected="false">Data Science & Analytics</button>
+            <button class="filter-tab-btn" data-filter="tools" role="tab" aria-selected="false">Tools & Web Apps</button>
           </div>
         </div>
 
-        <!-- CARD 2: PriceSense -->
-        <div class="hanging-card-wrapper reveal-node delay-1" data-category="ai tools">
-          <div class="suspension-wires">
-            <div class="anchor-mount left"></div>
-            <div class="wire left"></div>
-            <div class="anchor-mount right"></div>
-            <div class="wire right"></div>
-          </div>
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsContainer">
 
-          <div class="hanging-card">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">node://pricesense_engine</div>
-            </div>
-
-            <div class="card-gallery-wrapper">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="images/pricesense.png" alt="PriceSense Recommendation System" loading="lazy" />
+          <!-- 1. Offline AI Assistant -->
+          <div class="project-card project-card-item reveal" data-category="ai llm">
+            <div class="project-media-wrapper">
+              <div class="gallery-container">
+                <div class="gallery-track">
+                  <div class="gallery-slide"><img src="images/chatbot.png" alt="Offline AI Assistant Chat Interface" loading="lazy" /></div>
+                  <div class="gallery-slide"><img src="images/about.png" alt="Offline AI Architecture" loading="lazy" /></div>
                 </div>
-              </div>
-              <div class="gallery-indicators">
-                <span class="gallery-dot active"></span>
+                <button class="gallery-btn prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="gallery-btn next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="gallery-dots">
+                  <span class="gallery-dot active"></span>
+                  <span class="gallery-dot"></span>
+                </div>
               </div>
             </div>
-
-            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-              <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                  <i class="fa-solid fa-magnifying-glass-dollar" style="color: var(--neon-green);"></i>
-                  <h3 style="font-size: 1.2rem; color: #fff;">PriceSense Engine</h3>
-                </div>
-                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                  Electronic Items Recommendation System using Python & SerpAPI. Gathers product pricing in real time, computes customer sentiment scores, and recommends best buying stores.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Python</span>
-                  <span class="skill-meta-tag" style="color: var(--neon-green);">SerpAPI</span>
-                  <span class="skill-meta-tag">Recommendation</span>
-                  <span class="skill-meta-tag">Sentiment</span>
-                </div>
+            <div class="project-content">
+              <span class="project-category-badge">AI & Local LLMs</span>
+              <h2 class="project-title">Offline AI Assistant</h2>
+              <p class="project-desc">
+                Offline AI Chatbot powered by Ollama. Enables users to run and switch between multiple local LLMs locally with zero internet dependency, ensuring maximum data privacy.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Ollama</span>
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">Local LLM</span>
+                <span class="tag-pill">Streamlit</span>
               </div>
-
-              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
-                <a href="https://github.com/Anuj04432/PriceSense.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-brands fa-github"></i> REPO
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/Offline_AI_Assistant.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
                 </a>
-                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
                 </a>
+                <button class="btn btn-ghost btn-sm" onclick="openProjectModal('Offline AI Assistant', 'AI & Local LLMs', 'Offline AI Chatbot powered by Ollama. Enables users to run and switch between multiple local LLMs locally with zero internet dependency, ensuring maximum data privacy.', 'images/chatbot.png', ['Ollama', 'Python', 'Local LLM', 'Streamlit'], 'https://personal-expense-tracker-02.streamlit.app/', 'https://github.com/Anuj04432/Offline_AI_Assistant.git')" title="View Project Details">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- CARD 3: Prompt Optimizer Middleware -->
-        <div class="hanging-card-wrapper reveal-node delay-2" data-category="ai llm">
-          <div class="suspension-wires">
-            <div class="anchor-mount left"></div>
-            <div class="wire left"></div>
-            <div class="anchor-mount right"></div>
-            <div class="wire right"></div>
-          </div>
-
-          <div class="hanging-card">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">node://prompt_optimizer</div>
+          <!-- 2. PriceSense Engine -->
+          <div class="project-card project-card-item reveal reveal-delay-1" data-category="ai tools">
+            <div class="project-media-wrapper">
+              <img src="images/pricesense.png" alt="PriceSense Engine Dashboard" loading="lazy" />
             </div>
-
-            <div class="card-gallery-wrapper">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="images/pricesense.png" alt="Prompt Optimizer Middleware" loading="lazy" />
-                </div>
+            <div class="project-content">
+              <span class="project-category-badge">AI & Recommendation</span>
+              <h2 class="project-title">PriceSense Engine</h2>
+              <p class="project-desc">
+                Electronic Items Recommendation System using Python & SerpAPI. Gathers product pricing in real time, computes customer sentiment scores, and recommends best buying stores.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">SerpAPI</span>
+                <span class="tag-pill">Recommendation</span>
+                <span class="tag-pill">Sentiment</span>
               </div>
-              <div class="gallery-indicators">
-                <span class="gallery-dot active"></span>
-              </div>
-            </div>
-
-            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-              <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                  <i class="fa-solid fa-microchip" style="color: var(--neon-amber);"></i>
-                  <h3 style="font-size: 1.2rem; color: #fff;">Prompt Optimizer</h3>
-                </div>
-                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                  Middleware AI tool sitting between the AI model and user inputs. Analyzes context and refines prompts dynamically to maximize inference accuracy and output fidelity.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Python</span>
-                  <span class="skill-meta-tag" style="color: var(--neon-amber);">LLM Middleware</span>
-                  <span class="skill-meta-tag">Prompt Ops</span>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
-                <a href="https://github.com/Anuj04432/Prompt_Optimizer.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-brands fa-github"></i> REPO
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/PriceSense.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
                 </a>
-                <a href="#" class="btn-terminal" style="flex: 1; font-size: 0.78rem; opacity: 0.6; cursor: not-allowed;">
-                  <i class="fa-solid fa-lock"></i> PRIVATE
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
                 </a>
+                <button class="btn btn-ghost btn-sm" onclick="openProjectModal('PriceSense Engine', 'AI & Recommendation', 'Electronic Items Recommendation System using Python & SerpAPI. Gathers product pricing in real time, computes customer sentiment scores, and recommends best buying stores.', 'images/pricesense.png', ['Python', 'SerpAPI', 'Recommendation', 'Sentiment'], 'https://personal-expense-tracker-02.streamlit.app/', 'https://github.com/Anuj04432/PriceSense.git')" title="View Project Details">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- CARD 4: Fake News Detection -->
-        <div class="hanging-card-wrapper reveal-node" data-category="ml nlp">
-          <div class="suspension-wires">
-            <div class="anchor-mount left"></div>
-            <div class="wire left"></div>
-            <div class="anchor-mount right"></div>
-            <div class="wire right"></div>
-          </div>
-
-          <div class="hanging-card">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">node://fake_news_detector</div>
+          <!-- 3. Prompt Optimizer -->
+          <div class="project-card project-card-item reveal reveal-delay-2" data-category="ai llm">
+            <div class="project-media-wrapper">
+              <img src="images/pricesense.png" alt="Prompt Optimizer Architecture" loading="lazy" />
             </div>
-
-            <div class="card-gallery-wrapper">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="images/home.png" alt="Fake News Detection System" loading="lazy" />
-                </div>
+            <div class="project-content">
+              <span class="project-category-badge">AI Middleware & LLMs</span>
+              <h2 class="project-title">Prompt Optimizer</h2>
+              <p class="project-desc">
+                Middleware AI tool sitting between the AI model and user inputs. Analyzes context and refines prompts dynamically to maximize inference accuracy and output fidelity.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">LLM Middleware</span>
+                <span class="tag-pill">Prompt Ops</span>
               </div>
-              <div class="gallery-indicators">
-                <span class="gallery-dot active"></span>
-              </div>
-            </div>
-
-            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-              <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                  <i class="fa-solid fa-newspaper" style="color: var(--neon-cyan);"></i>
-                  <h3 style="font-size: 1.2rem; color: #fff;">Fake News Detection</h3>
-                </div>
-                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                  Machine learning fake news classifier built with Python and Logistic Regression. Uses NLP vectorization to predict authenticity of news articles with high precision.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Python</span>
-                  <span class="skill-meta-tag" style="color: var(--neon-green);">NLP</span>
-                  <span class="skill-meta-tag">Scikit-Learn</span>
-                  <span class="skill-meta-tag">Streamlit</span>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
-                <a href="https://github.com/Anuj04432/Fake_News_Detection.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-brands fa-github"></i> REPO
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/Prompt_Optimizer.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
                 </a>
-                <a href="https://fakenewsdetection-anuj.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
-                </a>
+                <button class="btn btn-ghost btn-sm" disabled style="opacity: 0.55; cursor: not-allowed;">
+                  <i class="fa-solid fa-lock"></i> Private
+                </button>
+                <button class="btn btn-ghost btn-sm" onclick="openProjectModal('Prompt Optimizer', 'AI Middleware & LLMs', 'Middleware AI tool sitting between the AI model and user inputs. Analyzes context and refines prompts dynamically to maximize inference accuracy and output fidelity.', 'images/pricesense.png', ['Python', 'LLM Middleware', 'Prompt Ops'], '', 'https://github.com/Anuj04432/Prompt_Optimizer.git')" title="View Project Details">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- CARD 5: AI To-Do List & Voice Handler -->
-        <div class="hanging-card-wrapper reveal-node delay-1" data-category="ai tools">
-          <div class="suspension-wires">
-            <div class="anchor-mount left"></div>
-            <div class="wire left"></div>
-            <div class="anchor-mount right"></div>
-            <div class="wire right"></div>
-          </div>
-
-          <div class="hanging-card">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">node://ai_task_handler</div>
+          <!-- 4. Fake News Detection -->
+          <div class="project-card project-card-item reveal" data-category="ml nlp">
+            <div class="project-media-wrapper">
+              <img src="images/home.png" alt="Fake News Detection App Interface" loading="lazy" />
             </div>
-
-            <div class="card-gallery-wrapper">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="images/todo.png" alt="AI To-Do Task Handler" loading="lazy" />
-                </div>
+            <div class="project-content">
+              <span class="project-category-badge">Machine Learning & NLP</span>
+              <h2 class="project-title">Fake News Detection</h2>
+              <p class="project-desc">
+                Machine learning fake news classifier built with Python and Logistic Regression. Uses NLP vectorization to predict authenticity of news articles with high precision.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">NLP</span>
+                <span class="tag-pill">Scikit-Learn</span>
+                <span class="tag-pill">Streamlit</span>
               </div>
-              <div class="gallery-indicators">
-                <span class="gallery-dot active"></span>
-              </div>
-            </div>
-
-            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-              <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                  <i class="fa-solid fa-list-check" style="color: var(--neon-green);"></i>
-                  <h3 style="font-size: 1.2rem; color: #fff;">AI Task Handler</h3>
-                </div>
-                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                  Full-stack AI task management app featuring voice input/output for hands-free creation, multilingual NLU commands, SQLite storage, and APScheduler automated reminders.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Voice I/O</span>
-                  <span class="skill-meta-tag" style="color: var(--neon-green);">Multilingual NLU</span>
-                  <span class="skill-meta-tag">SQLite</span>
-                  <span class="skill-meta-tag">APScheduler</span>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
-                <a href="https://github.com/Anuj04432/AI_Task_Handler.git" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-brands fa-github"></i> REPO
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/Fake_News_Detection.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
                 </a>
-                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                <a href="https://fakenewsdetection-anuj.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
                 </a>
+                <button class="btn btn-ghost btn-sm" onclick="openProjectModal('Fake News Detection', 'Machine Learning & NLP', 'Machine learning fake news classifier built with Python and Logistic Regression. Uses NLP vectorization to predict authenticity of news articles with high precision.', 'images/home.png', ['Python', 'NLP', 'Scikit-Learn', 'Streamlit'], 'https://fakenewsdetection-anuj.streamlit.app/', 'https://github.com/Anuj04432/Fake_News_Detection.git')" title="View Project Details">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- CARD 6: Personal Expense Tracker -->
-        <div class="hanging-card-wrapper reveal-node delay-2" data-category="tools data">
-          <div class="suspension-wires">
-            <div class="anchor-mount left"></div>
-            <div class="wire left"></div>
-            <div class="anchor-mount right"></div>
-            <div class="wire right"></div>
-          </div>
-
-          <div class="hanging-card">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">node://expense_tracker</div>
+          <!-- 5. AI Task Handler -->
+          <div class="project-card project-card-item reveal reveal-delay-1" data-category="ai tools">
+            <div class="project-media-wrapper">
+              <img src="images/todo.png" alt="AI Task Handler Application" loading="lazy" />
             </div>
-
-            <div class="card-gallery-wrapper">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="images/project4.png" alt="Personal Expense Tracker" loading="lazy" />
-                </div>
+            <div class="project-content">
+              <span class="project-category-badge">AI Systems & Automation</span>
+              <h2 class="project-title">AI Task Handler</h2>
+              <p class="project-desc">
+                Full-stack AI task management app featuring voice input/output for hands-free creation, multilingual NLU commands, SQLite storage, and APScheduler automated reminders.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Voice I/O</span>
+                <span class="tag-pill">Multilingual NLU</span>
+                <span class="tag-pill">SQLite</span>
+                <span class="tag-pill">APScheduler</span>
               </div>
-              <div class="gallery-indicators">
-                <span class="gallery-dot active"></span>
-              </div>
-            </div>
-
-            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-              <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                  <i class="fa-solid fa-indian-rupee-sign" style="color: var(--neon-amber);"></i>
-                  <h3 style="font-size: 1.2rem; color: #fff;">Expense Tracker</h3>
-                </div>
-                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                  Streamlit and Python financial manager to record income/expenses, set dynamic category budgets, and visualize spending distributions on PC and mobile devices.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Streamlit</span>
-                  <span class="skill-meta-tag" style="color: var(--neon-green);">Python</span>
-                  <span class="skill-meta-tag">Data Viz</span>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
-                <a href="https://github.com/Anuj04432/Personal-Expense-Tracker" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-brands fa-github"></i> REPO
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/AI_Task_Handler.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
                 </a>
-                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
                 </a>
+                <button class="btn btn-ghost btn-sm" onclick="openProjectModal('AI Task Handler', 'AI Systems & Automation', 'Full-stack AI task management app featuring voice input/output for hands-free creation, multilingual NLU commands, SQLite storage, and APScheduler automated reminders.', 'images/todo.png', ['Voice I/O', 'Multilingual NLU', 'SQLite', 'APScheduler'], 'https://personal-expense-tracker-02.streamlit.app/', 'https://github.com/Anuj04432/AI_Task_Handler.git')" title="View Project Details">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- CARD 7: Covid Dashboard & Data Analytics -->
-        <div class="hanging-card-wrapper reveal-node" data-category="data">
-          <div class="suspension-wires">
-            <div class="anchor-mount left"></div>
-            <div class="wire left"></div>
-            <div class="anchor-mount right"></div>
-            <div class="wire right"></div>
-          </div>
-
-          <div class="hanging-card">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">node://covid_data_analytics</div>
+          <!-- 6. Expense Tracker -->
+          <div class="project-card project-card-item reveal reveal-delay-2" data-category="tools data">
+            <div class="project-media-wrapper">
+              <img src="images/project4.png" alt="Personal Expense Tracker Preview" loading="lazy" />
             </div>
-
-            <!-- Multi-Image Gallery -->
-            <div class="card-gallery-wrapper">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="images/dashboard.png" alt="Data Analytics Dashboard View 1" loading="lazy" />
-                </div>
-                <div class="gallery-slide">
-                  <img src="images/dashboard_adv.png" alt="Data Analytics Dashboard Advanced View" loading="lazy" />
-                </div>
+            <div class="project-content">
+              <span class="project-category-badge">Data Viz & Financial Tools</span>
+              <h2 class="project-title">Expense Tracker</h2>
+              <p class="project-desc">
+                Streamlit and Python financial manager to record income/expenses, set dynamic category budgets, and visualize spending distributions on PC and mobile devices.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Streamlit</span>
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">Data Viz</span>
               </div>
-              <button class="gallery-btn prev" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="gallery-btn next" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
-              <div class="gallery-indicators">
-                <span class="gallery-dot active"></span>
-                <span class="gallery-dot"></span>
-              </div>
-            </div>
-
-            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-              <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                  <i class="fa-solid fa-chart-line" style="color: var(--neon-cyan);"></i>
-                  <h3 style="font-size: 1.2rem; color: #fff;">Data Analytics & Viz</h3>
-                </div>
-                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                  Comprehensive data analysis and statistical visualization using Python (Pandas, Matplotlib, Seaborn) translating raw multi-source epidemiological metrics into actionable charts.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">Pandas</span>
-                  <span class="skill-meta-tag" style="color: var(--neon-green);">Matplotlib</span>
-                  <span class="skill-meta-tag">Seaborn</span>
-                  <span class="skill-meta-tag">EDA</span>
-                </div>
-              </div>
-
-              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
-                <a href="https://github.com/Anuj04432/Covid_Dashboard" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-brands fa-github"></i> REPO
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/Personal-Expense-Tracker" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
                 </a>
-                <a href="images/dashboard_adv.png" target="_blank" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-solid fa-image"></i> VIEW CHARTS
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
                 </a>
+                <button class="btn btn-ghost btn-sm" onclick="openProjectModal('Expense Tracker', 'Data Viz & Financial Tools', 'Streamlit and Python financial manager to record income/expenses, set dynamic category budgets, and visualize spending distributions on PC and mobile devices.', 'images/project4.png', ['Streamlit', 'Python', 'Data Viz'], 'https://personal-expense-tracker-02.streamlit.app/', 'https://github.com/Anuj04432/Personal-Expense-Tracker')" title="View Project Details">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- CARD 8: Personal Portfolio Terminal Interface -->
-        <div class="hanging-card-wrapper reveal-node delay-1" data-category="tools">
-          <div class="suspension-wires">
-            <div class="anchor-mount left"></div>
-            <div class="wire left"></div>
-            <div class="anchor-mount right"></div>
-            <div class="wire right"></div>
-          </div>
-
-          <div class="hanging-card">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">node://portfolio_terminal</div>
-            </div>
-
-            <div class="card-gallery-wrapper">
-              <div class="gallery-track">
-                <div class="gallery-slide">
-                  <img src="images/Screenshot 2026-04-03 215729.png" alt="Portfolio Terminal Interface" loading="lazy" />
+          <!-- 7. Data Analytics & Viz -->
+          <div class="project-card project-card-item reveal" data-category="data">
+            <div class="project-media-wrapper">
+              <div class="gallery-container">
+                <div class="gallery-track">
+                  <div class="gallery-slide"><img src="images/dashboard.png" alt="Data Analytics Dashboard Overview" loading="lazy" /></div>
+                  <div class="gallery-slide"><img src="images/dashboard_adv.png" alt="Advanced Statistical Visualization" loading="lazy" /></div>
                 </div>
-              </div>
-              <div class="gallery-indicators">
-                <span class="gallery-dot active"></span>
+                <button class="gallery-btn prev" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="gallery-btn next" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="gallery-dots">
+                  <span class="gallery-dot active"></span>
+                  <span class="gallery-dot"></span>
+                </div>
               </div>
             </div>
-
-            <div style="padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between;">
-              <div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                  <i class="fa-solid fa-terminal" style="color: var(--neon-green);"></i>
-                  <h3 style="font-size: 1.2rem; color: #fff;">Cyber Terminal Portfolio</h3>
-                </div>
-                <p style="font-family: var(--font-code); font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">
-                  AI Engineer personal workspace landing page featuring retro xterm raster typography, hanging cards pendulum physics, and CLI two-way communication channel.
-                </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem;">
-                  <span class="skill-meta-tag" style="color: var(--neon-cyan);">HTML5/CSS3</span>
-                  <span class="skill-meta-tag" style="color: var(--neon-green);">JavaScript</span>
-                  <span class="skill-meta-tag">Cyberpunk</span>
-                </div>
+            <div class="project-content">
+              <span class="project-category-badge">Data Science & Analytics</span>
+              <h2 class="project-title">Data Analytics & Viz</h2>
+              <p class="project-desc">
+                Comprehensive data analysis and statistical visualization using Python (Pandas, Matplotlib, Seaborn) translating raw multi-source epidemiological metrics into actionable charts.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Pandas</span>
+                <span class="tag-pill">Matplotlib</span>
+                <span class="tag-pill">Seaborn</span>
+                <span class="tag-pill">EDA</span>
               </div>
-
-              <div style="display: flex; gap: 0.75rem; border-top: 1px dashed var(--border-subtle); padding-top: 1rem;">
-                <a href="https://github.com/Anuj04432/Portfolio" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-brands fa-github"></i> REPO
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/Covid_Dashboard" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
                 </a>
-                <a href="https://anujwagmore.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1; font-size: 0.78rem;">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
+                <a href="images/dashboard_adv.png" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-chart-line"></i> View Charts
                 </a>
+                <button class="btn btn-ghost btn-sm" onclick="openProjectModal('Data Analytics & Viz', 'Data Science & Analytics', 'Comprehensive data analysis and statistical visualization using Python (Pandas, Matplotlib, Seaborn) translating raw multi-source epidemiological metrics into actionable charts.', 'images/dashboard.png', ['Pandas', 'Matplotlib', 'Seaborn', 'EDA'], 'images/dashboard_adv.png', 'https://github.com/Anuj04432/Covid_Dashboard')" title="View Project Details">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
               </div>
             </div>
           </div>
+
+          <!-- 8. This Portfolio -->
+          <div class="project-card project-card-item reveal reveal-delay-1" data-category="tools">
+            <div class="project-media-wrapper">
+              <img src="images/Screenshot 2026-04-03 215729.png" alt="AI Portfolio Design" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <span class="project-category-badge">Web Architecture</span>
+              <h2 class="project-title">This Portfolio</h2>
+              <p class="project-desc">
+                AI Engineer personal portfolio built as a modern glassmorphism/gradient experience with scroll-triggered reveals, interactive circular skill rings, and responsive glass architecture.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">HTML5/CSS3</span>
+                <span class="tag-pill">JavaScript</span>
+                <span class="tag-pill">Glassmorphism</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/Portfolio" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
+                </a>
+                <a href="https://anujwagmore.netlify.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+                <button class="btn btn-ghost btn-sm" onclick="openProjectModal('This Portfolio', 'Web Architecture', 'AI Engineer personal portfolio built as a modern glassmorphism/gradient experience with scroll-triggered reveals, interactive circular skill rings, and responsive glass architecture.', 'images/Screenshot 2026-04-03 215729.png', ['HTML5/CSS3', 'JavaScript', 'Glassmorphism'], 'https://anujwagmore.netlify.app', 'https://github.com/Anuj04432/Portfolio')" title="View Project Details">
+                  <i class="fa-solid fa-expand"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
+    </section>
 
-    </div>
   </main>
 
-  <!-- Deep Dive Inspector Modal -->
-  <div class="cyber-modal-overlay" id="projectModal" role="dialog" aria-modal="true">
-    <div class="cyber-auth-modal" style="max-width: 650px; border-color: var(--neon-cyan); box-shadow: 0 0 35px var(--neon-cyan-glow);">
-      <div class="auth-header" style="border-bottom-color: var(--border-dim);">
-        <div class="auth-title" style="color: var(--neon-cyan);">
-          <i class="fa-solid fa-folder-open"></i> <span id="modalTitle">PROJECT_INSPECTOR</span>
-        </div>
-        <button class="modal-close-btn" id="closeProjectModal" aria-label="Close Inspector">&times;</button>
+  <!-- ========================================================================
+       PROJECT DETAIL MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="closeProjectModal" aria-label="Close Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-img-wrapper">
+        <img id="modalImg" src="images/chatbot.png" alt="Project Screenshot" />
       </div>
 
-      <div style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
-        <div style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-subtle);">
-          <img id="modalImg" src="images/chatbot.png" alt="Project Preview" style="width: 100%; height: 100%; object-fit: cover;" />
-        </div>
-        <p id="modalDesc" style="font-family: var(--font-code); font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;"></p>
-        <div id="modalTech" style="display: flex; flex-wrap: wrap; gap: 0.5rem;"></div>
+      <div class="modal-body">
+        <span class="project-category-badge" id="modalCategory">Category</span>
+        <h2 class="modal-title" id="modalTitle">Project Title</h2>
+        <div class="tag-group modal-tags" id="modalTags"></div>
+        <p class="modal-desc" id="modalDesc">Project description goes here.</p>
 
-        <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
-          <a id="modalGit" href="#" target="_blank" rel="noopener noreferrer" class="btn-terminal" style="flex: 1;">
-            <i class="fa-brands fa-github"></i> GITHUB REPO
+        <div class="modal-actions">
+          <a href="#" id="modalLive" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Project
           </a>
-          <a id="modalLive" href="#" target="_blank" rel="noopener noreferrer" class="btn-terminal primary" style="flex: 1;">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> LAUNCH LIVE
+          <a href="#" id="modalGit" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            <i class="fa-brands fa-github"></i> View Source Repository
           </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer class="cyber-footer">
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-left">
-          <span>&copy; 2026 Anuj Wagmore. Built with pure xterm bitmap architecture & Cyberpunk aesthetic.</span>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span>Anuj Wagmore</span>
+          <span class="brand-badge">AI Lab</span>
         </div>
-        <div>
-          <a href="index.html" style="color: var(--neon-cyan); font-family: var(--font-code); font-size: 0.85rem;">
-            &lt; RETURN_TO_ROOT /&gt;
-          </a>
+
+        <div class="footer-copy">
+          &copy; 2026 Anuj Wagmore. All rights reserved.
+        </div>
+
+        <div class="footer-badge">
+          <span class="status-dot"></span>
+          <span>Available for AI/ML roles</span>
         </div>
       </div>
     </div>
