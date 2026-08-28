@@ -17,8 +17,14 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- Three.js 3D Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+
+  <!-- 3D Particle Neural Brain Canvas -->
+  <canvas id="neuralBrain3D" class="neural-brain-3d-canvas"></canvas>
 
   <!-- Ambient Drifting Gradient Blobs & Texture -->
   <div class="ambient-bg-container" aria-hidden="true">
@@ -61,7 +67,7 @@
   <main class="main-content">
 
     <!-- ========================================================================
-         PROJECTS SHOWCASE SECTION
+         PROJECTS SHOWCASE SECTION (CLEAN UNIFORM GRID)
          ======================================================================== -->
     <section class="projects-section" style="padding-top: calc(var(--nav-height) + 4rem); min-height: 85vh;">
       <div class="container">
@@ -86,12 +92,16 @@
           </div>
         </div>
 
-        <!-- Projects Grid -->
+        <!-- Uniform Projects Grid -->
         <div class="projects-grid" id="projectsContainer">
 
           <!-- 1. Offline AI Assistant -->
           <div class="project-card project-card-item reveal" data-category="ai llm">
             <div class="project-media-wrapper">
+              <div class="project-corner-badge">
+                <span class="category-pill-dot dot-ai"></span>
+                <span>AI & Local LLMs</span>
+              </div>
               <div class="gallery-container">
                 <div class="gallery-track">
                   <div class="gallery-slide"><img src="images/chatbot.png" alt="Offline AI Assistant Chat Interface" loading="lazy" /></div>
@@ -104,6 +114,7 @@
                   <span class="gallery-dot"></span>
                 </div>
               </div>
+              <div class="project-image-scrim"></div>
             </div>
             <div class="project-content">
               <span class="project-category-badge">AI & Local LLMs</span>
@@ -134,7 +145,12 @@
           <!-- 2. PriceSense Engine -->
           <div class="project-card project-card-item reveal reveal-delay-1" data-category="ai tools">
             <div class="project-media-wrapper">
+              <div class="project-corner-badge">
+                <span class="category-pill-dot dot-ai"></span>
+                <span>AI & Tools</span>
+              </div>
               <img src="images/pricesense.png" alt="PriceSense Engine Dashboard" loading="lazy" />
+              <div class="project-image-scrim"></div>
             </div>
             <div class="project-content">
               <span class="project-category-badge">AI & Recommendation</span>
@@ -165,7 +181,12 @@
           <!-- 3. Prompt Optimizer -->
           <div class="project-card project-card-item reveal reveal-delay-2" data-category="ai llm">
             <div class="project-media-wrapper">
+              <div class="project-corner-badge">
+                <span class="category-pill-dot dot-ai"></span>
+                <span>AI & LLMs</span>
+              </div>
               <img src="images/pricesense.png" alt="Prompt Optimizer Architecture" loading="lazy" />
+              <div class="project-image-scrim"></div>
             </div>
             <div class="project-content">
               <span class="project-category-badge">AI Middleware & LLMs</span>
@@ -195,7 +216,12 @@
           <!-- 4. Fake News Detection -->
           <div class="project-card project-card-item reveal" data-category="ml nlp">
             <div class="project-media-wrapper">
+              <div class="project-corner-badge">
+                <span class="category-pill-dot dot-ml"></span>
+                <span>Machine Learning</span>
+              </div>
               <img src="images/home.png" alt="Fake News Detection App Interface" loading="lazy" />
+              <div class="project-image-scrim"></div>
             </div>
             <div class="project-content">
               <span class="project-category-badge">Machine Learning & NLP</span>
@@ -226,7 +252,12 @@
           <!-- 5. AI Task Handler -->
           <div class="project-card project-card-item reveal reveal-delay-1" data-category="ai tools">
             <div class="project-media-wrapper">
+              <div class="project-corner-badge">
+                <span class="category-pill-dot dot-tools"></span>
+                <span>AI & Automation</span>
+              </div>
               <img src="images/todo.png" alt="AI Task Handler Application" loading="lazy" />
+              <div class="project-image-scrim"></div>
             </div>
             <div class="project-content">
               <span class="project-category-badge">AI Systems & Automation</span>
@@ -257,7 +288,12 @@
           <!-- 6. Expense Tracker -->
           <div class="project-card project-card-item reveal reveal-delay-2" data-category="tools data">
             <div class="project-media-wrapper">
+              <div class="project-corner-badge">
+                <span class="category-pill-dot dot-tools"></span>
+                <span>Tools & Data</span>
+              </div>
               <img src="images/project4.png" alt="Personal Expense Tracker Preview" loading="lazy" />
+              <div class="project-image-scrim"></div>
             </div>
             <div class="project-content">
               <span class="project-category-badge">Data Viz & Financial Tools</span>
@@ -287,6 +323,10 @@
           <!-- 7. Data Analytics & Viz -->
           <div class="project-card project-card-item reveal" data-category="data">
             <div class="project-media-wrapper">
+              <div class="project-corner-badge">
+                <span class="category-pill-dot dot-data"></span>
+                <span>Data Science</span>
+              </div>
               <div class="gallery-container">
                 <div class="gallery-track">
                   <div class="gallery-slide"><img src="images/dashboard.png" alt="Data Analytics Dashboard Overview" loading="lazy" /></div>
@@ -299,6 +339,7 @@
                   <span class="gallery-dot"></span>
                 </div>
               </div>
+              <div class="project-image-scrim"></div>
             </div>
             <div class="project-content">
               <span class="project-category-badge">Data Science & Analytics</span>
@@ -329,7 +370,12 @@
           <!-- 8. This Portfolio -->
           <div class="project-card project-card-item reveal reveal-delay-1" data-category="tools">
             <div class="project-media-wrapper">
+              <div class="project-corner-badge">
+                <span class="category-pill-dot dot-tools"></span>
+                <span>Web Architecture</span>
+              </div>
               <img src="images/Screenshot 2026-04-03 215729.png" alt="AI Portfolio Design" loading="lazy" />
+              <div class="project-image-scrim"></div>
             </div>
             <div class="project-content">
               <span class="project-category-badge">Web Architecture</span>
@@ -418,6 +464,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/neural-brain-3d.js"></script>
   <script src="js/main.js"></script>
   <script src="js/projects.js"></script>
 </body>
