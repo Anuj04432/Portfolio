@@ -3,226 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anuj Wagmore</title>
-  <meta name="description" content="Portfolio of Anuj Wagmore - AI Engineer, Machine Learning Developer, and Local LLM Specialist." />
-  
-  <!-- Core Design System & Animations -->
+  <title>Anuj Wagmore — AI & Machine Learning Engineer</title>
+  <meta name="description" content="Portfolio of Anuj Wagmore — AI & Machine Learning Engineer specializing in local LLMs, NLP, and intelligent systems." />
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
 
-  <!-- FontAwesome Icons for Skill & System Logos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- EmailJS SDK for Comms Integration -->
+  <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
 
-  <!-- ==========================================================================
-       CINEMATIC FULLSCREEN INTRO VIDEO (PLAYS BEFORE HOME PAGE)
-       ========================================================================== -->
-  <div class="fullscreen-intro-overlay" id="fullscreenIntroOverlay" role="dialog" aria-modal="true">
-    
-    <!-- Fullscreen Video Element -->
-    <video id="introVideo" class="fullscreen-intro-video" playsinline preload="auto">
-      <source src="images/welcome_portfolio.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-
-    <!-- Top HUD Bar -->
-    <div class="intro-hud-top">
-      <div class="intro-boot-tag">
-        <i class="fa-solid fa-brain"></i>
-        <span>AI_WORKSPACE // WELCOME_SHOWCASE</span>
-      </div>
-      <button class="intro-unmute-btn" id="introAudioToggle" title="Toggle Sound">
-        <i class="fa-solid fa-volume-high" id="introAudioIcon"></i> <span id="introAudioText">SOUND: ON</span>
-      </button>
-    </div>
-
-    <!-- Center Interaction Prompt (Appears if autoplay is restricted by browser) -->
-    <div class="intro-start-prompt" id="introStartPrompt">
-      <div class="mono-heading" style="justify-content: center;">AI SHOWCASE READY</div>
-      <h3 style="color: #fff; font-size: 1.3rem;">CLICK TO INITIALIZE EXPERIENCE</h3>
-      <p style="font-family: var(--font-terminal); color: var(--text-secondary); font-size: 0.9rem; max-width: 320px;">
-        High-fidelity audio & video portfolio stream.
-      </p>
-      <button class="btn-terminal green" id="introStartBtn" style="font-size: 1rem; padding: 0.8rem 1.8rem;">
-        <i class="fa-solid fa-play"></i> [ INITIALIZE & ENTER ]
-      </button>
-    </div>
-
-    <!-- Bottom HUD Bar -->
-    <div class="intro-hud-bottom">
-      <div style="font-family: var(--font-code); font-size: 0.8rem; color: var(--text-muted);">
-        PRESS <span style="color: var(--neon-cyan);">[ESC]</span> OR CLICK TO SKIP TO PORTFOLIO
-      </div>
-      <button class="intro-skip-btn" id="skipIntroBtn" title="Skip to Workspace">
-        <span>[ SKIP_INTRO &gt;&gt; ]</span>
-      </button>
-    </div>
-
-    <!-- Progress Track -->
-    <div class="intro-progress-track">
-      <div class="intro-progress-bar" id="introProgressBar"></div>
-    </div>
+  <!-- Ambient Drifting Gradient Blobs & Texture -->
+  <div class="ambient-bg-container" aria-hidden="true">
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
   </div>
+  <div class="ambient-grid-mesh" aria-hidden="true"></div>
 
-  <!-- Dynamic Neural Networks & Twinkling Stars Canvas -->
-  <canvas id="neuralCanvas"></canvas>
+  <!-- Hidden SVG for Reusable Gradients -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6C63FF" />
+        <stop offset="100%" stop-color="#36D1DC" />
+      </linearGradient>
+    </defs>
+  </svg>
 
-  <!-- Cyber Background Grid Overlay -->
-  <div class="cyber-bg-grid" aria-hidden="true"></div>
-
-  <!-- STICKY NAVBAR -->
-  <header class="cyber-navbar" id="cyberNavbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand" title="Home">
-        <span class="brand-badge">AI CORE</span>
-        <span>Anuj Wagmore</span>
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about" class="nav-link"><span class="index">01.</span> About</a></li>
-        <li><a href="#skills" class="nav-link"><span class="index">02.</span> Skills</a></li>
-        <li><a href="projects.html" class="nav-link"><span class="index">03.</span> Projects</a></li>
-        <li><a href="#contact" class="nav-link"><span class="index">04.</span> Contact</a></li>
-      </ul>
-
-      <!-- Action Items -->
-      <div class="nav-actions">
-        <!-- GitHub Link with SVG -->
-        <a href="https://github.com/Anuj04432" target="_blank" rel="noopener noreferrer" class="github-nav-btn" title="GitHub Profile">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
+  <!-- Sticky Glass Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-wrapper">
+      <nav class="nav-inner" aria-label="Main Navigation">
+        <a href="index.html" class="nav-brand" title="Anuj Wagmore Home">
+          <span>Anuj Wagmore</span>
+          <span class="brand-badge">AI Lab</span>
         </a>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="mobile-toggle" aria-label="Toggle Navigation">
-          <i class="fa-solid fa-terminal"></i>
-        </button>
-      </div>
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action Items -->
+        <div class="nav-actions">
+          <a href="https://github.com/Anuj04432" target="_blank" rel="noopener noreferrer" class="nav-social-btn" title="GitHub Profile" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- MAIN WRAPPER -->
-  <main>
+  <main class="main-content">
 
-    <!-- ==========================================================================
-         HERO SECTION: AI Engineer Workspace & Profile Card
-         ========================================================================== -->
-    <section class="hero-section" id="home">
+    <!-- ========================================================================
+         1. HERO SECTION
+         ======================================================================== -->
+    <section class="hero-section" id="hero">
       <div class="container">
         <div class="hero-grid">
-          
-          <!-- Terminal Main Window (Left) -->
-          <div class="terminal-window reveal-left">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
-              </div>
-              <div class="terminal-title">workspace://anuj-ai-engineer</div>
-              <div class="live-indicator">ACTIVE</div>
+
+          <!-- Left Column: Bio & Calls to Action -->
+          <div class="hero-content reveal">
+            <div class="hero-badge-pill">
+              <span class="status-dot"></span>
+              <span>Available for AI / ML Roles</span>
             </div>
 
-            <div class="terminal-body">
-              <div class="cli-prompt-line">
-                <span class="cli-user">anuj</span><span class="cli-host">@ai-workspace</span>:<span class="cli-path">~/models</span>$ <span class="cli-cmd">python init_profile.py</span>
+            <h1 class="hero-headline">
+              Hi, I'm <span class="gradient-text">Anuj Wagmore</span>
+            </h1>
+
+            <div class="hero-role-wrapper" aria-label="Role">
+              <span id="hero-role-text">AI & Machine Learning Engineer</span>
+              <span class="hero-role-cursor" aria-hidden="true"></span>
+            </div>
+
+            <p class="hero-bio">
+              Passionate AI & Machine Learning Engineer pursuing B.Tech in CS (AI/ML). Focused on deploying local LLMs with Ollama, building NLP classifiers, designing data analytics pipelines, and creating intelligent, scalable software applications.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="projects.html" class="btn btn-primary">
+                <i class="fa-solid fa-layer-group"></i> View Projects
+              </a>
+              <a href="#contact" class="btn btn-ghost">
+                <i class="fa-solid fa-envelope"></i> Contact Me
+              </a>
+              <a href="https://drive.google.com/file/d/1oBlUPXUfr8uE8j2yrZ-zuj3NVu0ED10t/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+                <i class="fa-solid fa-file-lines"></i> Resume
+              </a>
+            </div>
+
+            <div class="hero-telemetry-row">
+              <div class="telemetry-item">
+                <i class="fa-solid fa-microchip" style="color: var(--grad-a);"></i>
+                <span><strong>Core Focus:</strong> AI/ML & LLMs</span>
               </div>
-
-              <div class="mono-heading">ARTIFICIAL INTELLIGENCE & MACHINE LEARNING</div>
-
-              <h1 class="hero-main-title">
-                Hello, I'm <span class="highlight glitch-hover">Anuj Wagmore</span>
-              </h1>
-
-              <div class="typing-container">
-                <span>&gt; </span>
-                <span id="typing-text"></span>
-                <span class="cursor-blink"></span>
+              <div class="telemetry-item">
+                <i class="fa-brands fa-python" style="color: var(--grad-b);"></i>
+                <span><strong>Frameworks:</strong> Python / Ollama / NLP</span>
               </div>
-
-              <p class="hero-bio">
-                Passionate <strong>AI & Machine Learning Engineer</strong> pursuing B.Tech in CS (AI/ML). Focused on deploying local LLMs with Ollama, building NLP classifiers, designing data analytics pipelines, and creating intelligent, scalable software applications.
-              </p>
-
-              <div class="hero-cta-group">
-                <a href="projects.html" class="btn-terminal primary">
-                  <i class="fa-solid fa-diagram-project"></i> [ VIEW_PROJECTS ]
-                </a>
-                <a href="#contact" class="btn-terminal green">
-                  <i class="fa-solid fa-envelope"></i> [ CONTACT_ME ]
-                </a>
-                <a href="https://drive.google.com/file/d/1oBlUPXUfr8uE8j2yrZ-zuj3NVu0ED10t/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-terminal">
-                  <i class="fa-solid fa-file-pdf"></i> [ RESUME ]
-                </a>
-              </div>
-
-              <!-- Live AI Telemetry Bar -->
-              <div class="sys-telemetry-bar">
-                <div class="telemetry-item">
-                  <span class="telemetry-label">CORE_FOCUS</span>
-                  <span class="telemetry-val">AI / ML & LLMs</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">FRAMEWORKS</span>
-                  <span class="telemetry-val">Python / Ollama / NLP</span>
-                </div>
-                <div class="telemetry-item">
-                  <span class="telemetry-label">STATUS</span>
-                  <span class="telemetry-val" style="color: var(--neon-green);">AVAILABLE</span>
-                </div>
+              <div class="telemetry-item">
+                <span class="status-dot"></span>
+                <span><strong>Status:</strong> Available</span>
               </div>
             </div>
           </div>
 
-          <!-- Profile Photo Card (Right) -->
-          <div class="profile-card-wrapper reveal-right">
-            <div class="terminal-header">
-              <div class="terminal-title"><i class="fa-solid fa-user-tie"></i> PROFILE // ANUJ WAGMORE</div>
-              <div class="live-indicator">ONLINE</div>
-            </div>
-
-            <!-- Profile Photo Frame (Fits every image properly with object-fit) -->
-            <div class="profile-photo-frame">
-              <img src="images/about.png" alt="Anuj Wagmore - AI Engineer" loading="lazy" />
-              
-              <!-- Floating Profile Badge -->
-              <div class="profile-photo-badge">
-                <div class="badge-info">
-                  <span class="badge-name">Anuj Wagmore</span>
-                  <span class="badge-role">AI & ML Engineer</span>
+          <!-- Right Column: Profile Glass Card -->
+          <div class="profile-card-wrapper reveal reveal-delay-1">
+            <div class="profile-card">
+              <div class="profile-aura-container">
+                <div class="profile-image-inner">
+                  <img src="images/about.png" alt="Anuj Wagmore — AI & Machine Learning Engineer" width="400" height="400" loading="eager" />
                 </div>
-                <span class="live-indicator">ACTIVE</span>
               </div>
-            </div>
 
-            <!-- Profile Detailed Info (Degree, Specialization, Building Interests) -->
-            <div class="profile-details-list">
-              <div class="profile-detail-item">
-                <span class="detail-label"><i class="fa-solid fa-graduation-cap"></i> DEGREE:</span>
-                <span class="detail-val">B.Tech in Computer Science</span>
+              <div class="profile-badge-float">
+                <span class="status-dot"></span>
+                <span>Anuj Wagmore — AI & ML Engineer — Active</span>
               </div>
-              <div class="profile-detail-item">
-                <span class="detail-label"><i class="fa-solid fa-brain"></i> SPECIALIZATION:</span>
-                <span class="detail-val highlight">Artificial Intelligence & Machine Learning (AI/ML)</span>
-              </div>
-              <div class="profile-detail-item">
-                <span class="detail-label"><i class="fa-solid fa-code-branch"></i> INTERESTED IN BUILDING:</span>
-                <span class="detail-val green">Local LLM Agents, Intelligent Middleware & Edge AI Systems</span>
-              </div>
-            </div>
 
-            <!-- Card Footer with Video Replay Option -->
-            <div class="profile-card-footer">
-              <span>LOCATION: INDIA</span>
-              <button onclick="window.replayIntro && window.replayIntro()" class="btn-terminal primary" style="font-size: 0.72rem; padding: 0.3rem 0.75rem; cursor: pointer;">
-                <i class="fa-solid fa-play"></i> REPLAY INTRO
-              </button>
+              <div class="profile-specs-list">
+                <div class="spec-row">
+                  <span class="spec-label">Degree</span>
+                  <span class="spec-value">B.Tech in Computer Science</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">Specialization</span>
+                  <span class="spec-value">Artificial Intelligence & Machine Learning (AI/ML)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">Interested in Building</span>
+                  <span class="spec-value">Local LLM Agents, Intelligent Middleware & Edge AI</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-label">Location</span>
+                  <span class="spec-value"><i class="fa-solid fa-location-dot" style="color: var(--grad-b); margin-right: 4px;"></i> India (Open to Remote Worldwide)</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -230,360 +167,137 @@
       </div>
     </section>
 
-    <!-- ==========================================================================
-         ABOUT SECTION: Scrollable Profile Deep Dive & Credentials
-         ========================================================================== -->
-    <section class="about-section" id="about">
+    <!-- ========================================================================
+         2. ABOUT SECTION (#about)
+         ======================================================================== -->
+    <section id="about">
       <div class="container">
-        
-        <div class="mono-heading">BACKGROUND & DEEP DIVE</div>
-        <h2 class="section-title">
-          <span class="prompt-symbol">&gt;</span> About Me
-        </h2>
-        <p class="section-subtitle">Scroll through my background, technical journey, future goals, and academic credentials.</p>
+        <div class="section-header-center reveal">
+          <div class="section-eyebrow">About Me</div>
+          <h2 class="section-heading">Architecting Intelligent Systems</h2>
+          <p class="section-subtitle">
+            Taking machine learning algorithms from theoretical concepts into deployed, responsive software applications.
+          </p>
+        </div>
 
         <div class="about-grid">
-          
-          <!-- Scrollable Rich Terminal Container (Left) -->
-          <div class="about-scroll-terminal reveal-left">
-            
-            <!-- Block 1: Who Am I? -->
-            <div class="about-block">
-              <div class="about-block-title">
-                <i class="fa-solid fa-user-astronaut"></i> [ WHO_AM_I // IDENTITY & PHILOSOPHY ]
-              </div>
-              <p class="about-block-text">
-                I'm <strong>Anuj Wagmore</strong>, a passionate <strong>AI & Machine Learning Engineer</strong> and problem solver. I thrive at the intersection of data-driven intelligence and software engineering, creating tools that make complex artificial intelligence practical, scalable, and accessible to end-users.
+
+          <!-- Left Column: Narrative Copy -->
+          <div class="about-narrative reveal">
+            <!-- Who I Am -->
+            <div class="narrative-block">
+              <h3><i class="fa-solid fa-user-astronaut"></i> Who I Am</h3>
+              <p>
+                I'm Anuj Wagmore, a passionate AI & Machine Learning Engineer and problem solver. I thrive at the intersection of data-driven intelligence and software engineering, creating tools that make complex artificial intelligence practical, scalable, and accessible to end-users. My passion lies in taking machine learning algorithms from theoretical concepts into deployed, responsive software applications.
               </p>
-              <p class="about-block-text" style="margin-top: 0.6rem;">
-                My passion lies in taking machine learning algorithms from theoretical concepts into deployed, responsive software applications. Whether it is deploying private local LLMs without internet dependence or engineering automated recommendation systems, I care deeply about clean code, high performance, and user-centric architecture.
+              <p>
+                Whether it is deploying private local LLMs without internet dependence or engineering automated recommendation systems, I care deeply about clean code, high performance, and user-centric architecture.
               </p>
-              <div class="about-tags-cloud">
-                <span class="about-tag-pill">AI Learner</span>
-                <span class="about-tag-pill">Problem Solver</span>
-                <span class="about-tag-pill">Systems Builder</span>
-                <span class="about-tag-pill">Open Source Advocate</span>
+              <div class="tag-group" style="margin-top: 1.25rem;">
+                <span class="tag-pill"><i class="fa-solid fa-brain"></i> AI Learner</span>
+                <span class="tag-pill"><i class="fa-solid fa-lightbulb"></i> Problem Solver</span>
+                <span class="tag-pill"><i class="fa-solid fa-cubes"></i> Systems Builder</span>
+                <span class="tag-pill"><i class="fa-brands fa-github"></i> Open Source Advocate</span>
               </div>
             </div>
 
-            <!-- Block 2: Education Background -->
-            <div class="about-block">
-              <div class="about-block-title">
-                <i class="fa-solid fa-graduation-cap"></i> [ EDUCATION_BACKGROUND // ACADEMICS ]
-              </div>
-              <p class="about-block-text">
-                <strong>Bachelor of Technology (B.Tech) in Computer Science</strong> with dedicated specialization in <strong>Artificial Intelligence & Machine Learning (AI/ML)</strong>.
+            <!-- Education -->
+            <div class="narrative-block">
+              <h3><i class="fa-solid fa-graduation-cap"></i> Academic Foundations</h3>
+              <p>
+                Bachelor of Technology (B.Tech) in Computer Science with dedicated specialization in Artificial Intelligence & Machine Learning (AI/ML).
               </p>
-              <ul class="about-points-list">
-                <li class="about-point-item">
+              <div class="coursework-list">
+                <div class="coursework-item">
                   <i class="fa-solid fa-check"></i>
-                  <span><strong>Core Coursework:</strong> Machine Learning, Deep Neural Networks, Natural Language Processing (NLP), Data Structures & Algorithms (DSA), Relational Database Management Systems (RDBMS).</span>
-                </li>
-                <li class="about-point-item">
+                  <div><strong>Core Coursework:</strong> Machine Learning, Deep Neural Networks, Natural Language Processing (NLP), Data Structures & Algorithms (DSA), Relational Database Management Systems (RDBMS).</div>
+                </div>
+                <div class="coursework-item">
                   <i class="fa-solid fa-check"></i>
-                  <span><strong>Mathematical Foundations:</strong> Linear Algebra, Multivariable Calculus, Probability & Statistical Inference for Machine Learning.</span>
-                </li>
-                <li class="about-point-item">
+                  <div><strong>Mathematical Foundations:</strong> Linear Algebra, Multivariable Calculus, Probability & Statistical Inference for Machine Learning.</div>
+                </div>
+                <div class="coursework-item">
                   <i class="fa-solid fa-check"></i>
-                  <span><strong>Hands-on Labs:</strong> Built multiple full-stack data analytics dashboards, ML classification pipelines, and cloud computing laboratory experiments.</span>
-                </li>
-              </ul>
+                  <div><strong>Hands-on Labs:</strong> Built multiple full-stack data analytics dashboards, ML classification pipelines, and cloud computing laboratory experiments.</div>
+                </div>
+              </div>
             </div>
 
-            <!-- Block 3: Technical Skills & Extra Expertise -->
-            <div class="about-block">
-              <div class="about-block-title">
-                <i class="fa-solid fa-microchip"></i> [ TECHNICAL_EXPERTISE & EXTRA_SKILLS ]
-              </div>
-              <p class="about-block-text">
-                Constantly expanding my toolkit with cutting-edge tools in the modern AI ecosystem:
-              </p>
-              <ul class="about-points-list">
-                <li class="about-point-item">
-                  <i class="fa-solid fa-terminal"></i>
-                  <span><strong>Local LLM Orchestration:</strong> Deploying and fine-tuning local models using Ollama, model switching architectures, and prompt optimization middleware.</span>
-                </li>
-                <li class="about-point-item">
-                  <i class="fa-solid fa-terminal"></i>
-                  <span><strong>NLP & Machine Learning:</strong> Text classification, Sentiment analysis, Feature engineering, TF-IDF / embeddings, Logistic Regression, Scikit-Learn pipelines.</span>
-                </li>
-                <li class="about-point-item">
-                  <i class="fa-solid fa-terminal"></i>
-                  <span><strong>Data Science & Analytics:</strong> Exploratory Data Analysis (EDA) with Pandas, NumPy, Matplotlib, Seaborn, and interactive business intelligence via PowerBI.</span>
-                </li>
-                <li class="about-point-item">
-                  <i class="fa-solid fa-terminal"></i>
-                  <span><strong>Software & Full-Stack Tools:</strong> Python, FastAPI, Streamlit, SQLite, JavaScript (ES6+), HTML5/CSS3, Git, and automated task scheduling (APScheduler).</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Block 4: Future Goals & Vision -->
-            <div class="about-block">
-              <div class="about-block-title">
-                <i class="fa-solid fa-bullseye"></i> [ FUTURE_GOALS // VISION & TRAJECTORY ]
-              </div>
-              <p class="about-block-text">
+            <!-- Future Goals -->
+            <div class="narrative-block">
+              <h3><i class="fa-solid fa-compass"></i> Engineering Roadmap</h3>
+              <p>
                 My roadmap is driven by continuous learning and pushing the boundaries of applied artificial intelligence:
               </p>
-              <ul class="about-points-list">
-                <li class="about-point-item">
-                  <i class="fa-solid fa-arrow-trend-up"></i>
-                  <span><strong>Autonomous Agentic Workflows:</strong> Designing multi-agent collaboration systems capable of autonomous tool execution, complex reasoning, and memory retrieval.</span>
-                </li>
-                <li class="about-point-item">
-                  <i class="fa-solid fa-arrow-trend-up"></i>
-                  <span><strong>Edge AI & Low-Latency LLMs:</strong> Optimizing quantized neural models for fast local inference on resource-constrained devices and privacy-first environments.</span>
-                </li>
-                <li class="about-point-item">
-                  <i class="fa-solid fa-arrow-trend-up"></i>
-                  <span><strong>Open Source Contributions:</strong> Building open AI developer tooling, dataset preprocessing utilities, and prompt middleware frameworks.</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-          <!-- Profile Specs & Credentials Matrix (Right) -->
-          <div class="reveal-right" style="display: flex; flex-direction: column; gap: 1.5rem;">
-            
-            <!-- Quick Specifications Card -->
-            <div class="terminal-card">
-              <div class="card-header-bar">
-                <span class="card-tag">// QUICK_SPECS</span>
-                <span class="card-tag">STATUS: COMPILED</span>
-              </div>
-
-              <ul class="about-specs-list">
-                <li class="spec-item">
-                  <span class="spec-key">[NAME]</span>
-                  <span class="spec-val">Anuj Wagmore</span>
-                </li>
-                <li class="spec-item">
-                  <span class="spec-key">[DEGREE]</span>
-                  <span class="spec-val">B.Tech in Computer Science</span>
-                </li>
-                <li class="spec-item">
-                  <span class="spec-key">[SPECIALIZATION]</span>
-                  <span class="spec-val" style="color: var(--neon-cyan);">Artificial Intelligence & Machine Learning</span>
-                </li>
-                <li class="spec-item">
-                  <span class="spec-key">[LOCATION]</span>
-                  <span class="spec-val">India (Open to Remote Worldwide)</span>
-                </li>
-                <li class="spec-item">
-                  <span class="spec-key">[STATUS]</span>
-                  <span class="spec-val" style="color: var(--neon-green);">Available for AI/ML Roles</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Accredited Certifications -->
-            <div class="terminal-card">
-              <div class="card-header-bar">
-                <span class="card-tag">// CERTIFICATIONS</span>
-                <span class="card-tag">ACCREDITED</span>
-              </div>
-
-              <div class="cert-mini-grid" style="margin-top: 0;">
-                <div class="cert-card-mini">
-                  <i class="fa-solid fa-cloud"></i>
-                  <h4>Google Cloud Arcade</h4>
-                  <p>Cloud infrastructure & hands-on laboratory challenges.</p>
+              <div class="coursework-list">
+                <div class="coursework-item">
+                  <i class="fa-solid fa-arrows-split-up-and-left"></i>
+                  <div><strong>Autonomous Agentic Workflows:</strong> Designing multi-agent collaboration systems capable of autonomous tool execution, complex reasoning, and memory retrieval.</div>
                 </div>
-
-                <div class="cert-card-mini">
-                  <i class="fa-brands fa-python"></i>
-                  <h4>Python Certification</h4>
-                  <p>Algorithms, data structures & backend programming.</p>
-                  <a href="https://drive.google.com/file/d/1pQZ2qqpyapjg-f9HFYX2Zonl9V3uNDUH/view?usp=drive_link" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; margin-top: 4px; display: inline-block;">
-                    &gt; [ View Certificate ]
-                  </a>
+                <div class="coursework-item">
+                  <i class="fa-solid fa-bolt"></i>
+                  <div><strong>Edge AI & Low-Latency LLMs:</strong> Optimizing quantized neural models for fast local inference on resource-constrained devices and privacy-first environments.</div>
                 </div>
-
-                <div class="cert-card-mini">
-                  <i class="fa-solid fa-brain"></i>
-                  <h4>Machine Learning</h4>
-                  <p>Supervised/Unsupervised models, NLP & Scikit-Learn.</p>
-                </div>
-
-                <div class="cert-card-mini">
-                  <i class="fa-solid fa-database"></i>
-                  <h4>SQL & Databases</h4>
-                  <p>Database design, query optimization & schemas.</p>
+                <div class="coursework-item">
+                  <i class="fa-solid fa-code-fork"></i>
+                  <div><strong>Open Source Contributions:</strong> Building open AI developer tooling, dataset preprocessing utilities, and prompt middleware frameworks.</div>
                 </div>
               </div>
             </div>
-
           </div>
 
-        </div>
-      </div>
-    </section>
+          <!-- Right Column: Certifications -->
+          <div class="certifications-wrapper reveal reveal-delay-1">
+            <div class="narrative-block" style="padding: 1.5rem 1.5rem 0.5rem 1.5rem; margin-bottom: 0.5rem;">
+              <h3 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-certificate"></i> Certifications & Credentials</h3>
+              <p style="font-size: 0.88rem;">Validated technical coursework and cloud engineering badges.</p>
+            </div>
 
-    <!-- ==========================================================================
-         SKILLS SECTION: Animated Proficiency Readout & Tech Logos
-         ========================================================================== -->
-    <section class="skills-section" id="skills">
-      <div class="container">
-        
-        <div class="mono-heading">TECHNICAL PROFICIENCY</div>
-        <h2 class="section-title">
-          <span class="prompt-symbol">&gt;</span> Technical Skills
-        </h2>
-        <p class="section-subtitle">Proficiency across machine learning algorithms, local LLM orchestration, and modern engineering stacks.</p>
-
-        <div class="skills-matrix-grid">
-
-          <!-- Python -->
-          <div class="skill-terminal-node reveal-node">
-            <div class="skill-node-header">
-              <div class="skill-identity">
-                <div class="skill-icon-frame"><i class="fa-brands fa-python"></i></div>
-                <div class="skill-name">Python & Data Stack</div>
+            <!-- Cert 1 -->
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class="fa-brands fa-google"></i>
               </div>
-              <div class="skill-percent-readout">[0%]</div>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill-bar" data-percent="85"></div>
-            </div>
-            <div class="skill-meta-tags">
-              <span class="skill-meta-tag">NumPy</span>
-              <span class="skill-meta-tag">Pandas</span>
-              <span class="skill-meta-tag">FastAPI</span>
-            </div>
-          </div>
-
-          <!-- Machine Learning & NLP -->
-          <div class="skill-terminal-node reveal-node delay-1">
-            <div class="skill-node-header">
-              <div class="skill-identity">
-                <div class="skill-icon-frame"><i class="fa-solid fa-brain"></i></div>
-                <div class="skill-name">Machine Learning & NLP</div>
+              <div class="cert-content">
+                <h4>Google Cloud Arcade</h4>
+                <p>Cloud infrastructure, data pipelines & hands-on laboratory challenges.</p>
               </div>
-              <div class="skill-percent-readout">[0%]</div>
             </div>
-            <div class="skill-track">
-              <div class="skill-fill-bar" data-percent="75"></div>
-            </div>
-            <div class="skill-meta-tags">
-              <span class="skill-meta-tag">Scikit-Learn</span>
-              <span class="skill-meta-tag">Text Vectorization</span>
-              <span class="skill-meta-tag">Classification</span>
-            </div>
-          </div>
 
-          <!-- Local LLMs & Ollama -->
-          <div class="skill-terminal-node reveal-node delay-2">
-            <div class="skill-node-header">
-              <div class="skill-identity">
-                <div class="skill-icon-frame"><i class="fa-solid fa-robot"></i></div>
-                <div class="skill-name">Local LLMs & Ollama</div>
+            <!-- Cert 2 -->
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class="fa-brands fa-python"></i>
               </div>
-              <div class="skill-percent-readout">[0%]</div>
+              <div class="cert-content">
+                <h4>Python Certification</h4>
+                <p>Algorithms, data structures & backend software programming.</p>
+                <a href="https://drive.google.com/file/d/1pQZ2qqpyapjg-f9HFYX2Zonl9V3uNDUH/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-link">
+                  <span>View Certificate</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
             </div>
-            <div class="skill-track">
-              <div class="skill-fill-bar" data-percent="80"></div>
-            </div>
-            <div class="skill-meta-tags">
-              <span class="skill-meta-tag">Ollama</span>
-              <span class="skill-meta-tag">Prompt Engineering</span>
-              <span class="skill-meta-tag">Offline AI</span>
-            </div>
-          </div>
 
-          <!-- JavaScript & Frontend Logic -->
-          <div class="skill-terminal-node reveal-node delay-3">
-            <div class="skill-node-header">
-              <div class="skill-identity">
-                <div class="skill-icon-frame"><i class="fa-brands fa-js"></i></div>
-                <div class="skill-name">JavaScript</div>
+            <!-- Cert 3 -->
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class="fa-solid fa-brain"></i>
               </div>
-              <div class="skill-percent-readout">[0%]</div>
+              <div class="cert-content">
+                <h4>Machine Learning</h4>
+                <p>Supervised & unsupervised models, NLP pipelines & Scikit-Learn.</p>
+              </div>
             </div>
-            <div class="skill-track">
-              <div class="skill-fill-bar" data-percent="75"></div>
-            </div>
-            <div class="skill-meta-tags">
-              <span class="skill-meta-tag">ES6+</span>
-              <span class="skill-meta-tag">Async / APIs</span>
-              <span class="skill-meta-tag">DOM Manipulation</span>
-            </div>
-          </div>
 
-          <!-- HTML5 -->
-          <div class="skill-terminal-node reveal-node delay-1">
-            <div class="skill-node-header">
-              <div class="skill-identity">
-                <div class="skill-icon-frame"><i class="fa-brands fa-html5"></i></div>
-                <div class="skill-name">HTML5</div>
+            <!-- Cert 4 -->
+            <div class="cert-card">
+              <div class="cert-icon">
+                <i class="fa-solid fa-database"></i>
               </div>
-              <div class="skill-percent-readout">[0%]</div>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill-bar" data-percent="90"></div>
-            </div>
-            <div class="skill-meta-tags">
-              <span class="skill-meta-tag">Semantic Web</span>
-              <span class="skill-meta-tag">Accessibility</span>
-              <span class="skill-meta-tag">Structure</span>
-            </div>
-          </div>
-
-          <!-- CSS3 -->
-          <div class="skill-terminal-node reveal-node delay-2">
-            <div class="skill-node-header">
-              <div class="skill-identity">
-                <div class="skill-icon-frame"><i class="fa-brands fa-css3-alt"></i></div>
-                <div class="skill-name">CSS3 & Layouts</div>
+              <div class="cert-content">
+                <h4>SQL & Databases</h4>
+                <p>Database design, query optimization, indexing & relational schemas.</p>
               </div>
-              <div class="skill-percent-readout">[0%]</div>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill-bar" data-percent="80"></div>
-            </div>
-            <div class="skill-meta-tags">
-              <span class="skill-meta-tag">Flexbox & Grid</span>
-              <span class="skill-meta-tag">Animations</span>
-              <span class="skill-meta-tag">Responsive</span>
-            </div>
-          </div>
-
-          <!-- PowerBI & Data Analytics -->
-          <div class="skill-terminal-node reveal-node delay-3">
-            <div class="skill-node-header">
-              <div class="skill-identity">
-                <div class="skill-icon-frame"><i class="fa-solid fa-chart-pie"></i></div>
-                <div class="skill-name">PowerBI & Analytics</div>
-              </div>
-              <div class="skill-percent-readout">[0%]</div>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill-bar" data-percent="85"></div>
-            </div>
-            <div class="skill-meta-tags">
-              <span class="skill-meta-tag">Dashboards</span>
-              <span class="skill-meta-tag">DAX</span>
-              <span class="skill-meta-tag">Data Insights</span>
-            </div>
-          </div>
-
-          <!-- SQL & Relational DBs -->
-          <div class="skill-terminal-node reveal-node delay-4">
-            <div class="skill-node-header">
-              <div class="skill-identity">
-                <div class="skill-icon-frame"><i class="fa-solid fa-database"></i></div>
-                <div class="skill-name">SQL & Databases</div>
-              </div>
-              <div class="skill-percent-readout">[0%]</div>
-            </div>
-            <div class="skill-track">
-              <div class="skill-fill-bar" data-percent="60"></div>
-            </div>
-            <div class="skill-meta-tags">
-              <span class="skill-meta-tag">SQLite</span>
-              <span class="skill-meta-tag">Queries</span>
-              <span class="skill-meta-tag">Database Design</span>
             </div>
           </div>
 
@@ -591,115 +305,411 @@
       </div>
     </section>
 
-    <!-- ==========================================================================
-         CONTACT SECTION: Split Layout (CLI Form & Network Info Panel)
-         ========================================================================== -->
-    <section class="contact-section" id="contact">
+    <!-- ========================================================================
+         3. SKILLS SECTION (#skills)
+         ======================================================================== -->
+    <section id="skills">
       <div class="container">
-        
-        <div class="mono-heading">GET IN TOUCH</div>
-        <h2 class="section-title">
-          <span class="prompt-symbol">&gt;</span> Contact Me
-        </h2>
-        <p class="section-subtitle">Send a direct message for AI collaborations, software projects, or engineering roles.</p>
+        <div class="section-header-center reveal">
+          <div class="section-eyebrow">Expertise</div>
+          <h2 class="section-heading">Technical Skills</h2>
+          <p class="section-subtitle">
+            Core proficiencies across machine learning architectures, local inference, and full-stack software development.
+          </p>
+        </div>
 
-        <div class="contact-split-layout">
-          
-          <!-- Left: CLI Interactive Input Form -->
-          <div class="cli-contact-form-container reveal-left">
-            <div class="terminal-header">
-              <div class="terminal-controls">
-                <span class="control-dot red"></span>
-                <span class="control-dot yellow"></span>
-                <span class="control-dot green"></span>
+        <div class="skills-grid">
+
+          <!-- Skill 1: Python & Data Stack -->
+          <div class="skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-brands fa-python"></i>
               </div>
-              <div class="terminal-title">send_message.sh</div>
-              <div class="live-indicator">LIVE</div>
+              <h3 class="skill-title">Python & Data Stack</h3>
             </div>
+            <div class="skill-ring-wrapper">
+              <svg class="skill-ring-svg" viewBox="0 0 100 100">
+                <circle class="skill-ring-bg" cx="50" cy="50" r="38" stroke-width="7" fill="none" />
+                <circle class="skill-ring-progress" cx="50" cy="50" r="38" stroke-width="7" fill="none" stroke-linecap="round" data-target="85" />
+              </svg>
+              <div class="skill-ring-value">0%</div>
+            </div>
+            <div class="skill-tags">
+              <span class="tag-pill">NumPy</span>
+              <span class="tag-pill">Pandas</span>
+              <span class="tag-pill">FastAPI</span>
+            </div>
+          </div>
 
-            <form class="cli-form-body" id="cliContactForm">
-              <div class="cli-input-group">
-                <label for="cliName" class="cli-label">
-                  <span class="arg">Name</span> &gt;
-                </label>
-                <input type="text" id="cliName" class="cli-input" placeholder="Your Name" required autocomplete="name" />
+          <!-- Skill 2: Machine Learning & NLP -->
+          <div class="skill-card reveal reveal-delay-1">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h3 class="skill-title">Machine Learning & NLP</h3>
+            </div>
+            <div class="skill-ring-wrapper">
+              <svg class="skill-ring-svg" viewBox="0 0 100 100">
+                <circle class="skill-ring-bg" cx="50" cy="50" r="38" stroke-width="7" fill="none" />
+                <circle class="skill-ring-progress" cx="50" cy="50" r="38" stroke-width="7" fill="none" stroke-linecap="round" data-target="75" />
+              </svg>
+              <div class="skill-ring-value">0%</div>
+            </div>
+            <div class="skill-tags">
+              <span class="tag-pill">Scikit-Learn</span>
+              <span class="tag-pill">Vectorization</span>
+              <span class="tag-pill">Classification</span>
+            </div>
+          </div>
+
+          <!-- Skill 3: Local LLMs & Ollama -->
+          <div class="skill-card reveal reveal-delay-2">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <h3 class="skill-title">Local LLMs & Ollama</h3>
+            </div>
+            <div class="skill-ring-wrapper">
+              <svg class="skill-ring-svg" viewBox="0 0 100 100">
+                <circle class="skill-ring-bg" cx="50" cy="50" r="38" stroke-width="7" fill="none" />
+                <circle class="skill-ring-progress" cx="50" cy="50" r="38" stroke-width="7" fill="none" stroke-linecap="round" data-target="80" />
+              </svg>
+              <div class="skill-ring-value">0%</div>
+            </div>
+            <div class="skill-tags">
+              <span class="tag-pill">Ollama</span>
+              <span class="tag-pill">Prompt Ops</span>
+              <span class="tag-pill">Offline AI</span>
+            </div>
+          </div>
+
+          <!-- Skill 4: JavaScript -->
+          <div class="skill-card reveal reveal-delay-3">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-brands fa-js"></i>
+              </div>
+              <h3 class="skill-title">JavaScript</h3>
+            </div>
+            <div class="skill-ring-wrapper">
+              <svg class="skill-ring-svg" viewBox="0 0 100 100">
+                <circle class="skill-ring-bg" cx="50" cy="50" r="38" stroke-width="7" fill="none" />
+                <circle class="skill-ring-progress" cx="50" cy="50" r="38" stroke-width="7" fill="none" stroke-linecap="round" data-target="75" />
+              </svg>
+              <div class="skill-ring-value">0%</div>
+            </div>
+            <div class="skill-tags">
+              <span class="tag-pill">ES6+</span>
+              <span class="tag-pill">Async/APIs</span>
+              <span class="tag-pill">DOM Ops</span>
+            </div>
+          </div>
+
+          <!-- Skill 5: HTML5 -->
+          <div class="skill-card reveal">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-brands fa-html5"></i>
+              </div>
+              <h3 class="skill-title">HTML5</h3>
+            </div>
+            <div class="skill-ring-wrapper">
+              <svg class="skill-ring-svg" viewBox="0 0 100 100">
+                <circle class="skill-ring-bg" cx="50" cy="50" r="38" stroke-width="7" fill="none" />
+                <circle class="skill-ring-progress" cx="50" cy="50" r="38" stroke-width="7" fill="none" stroke-linecap="round" data-target="90" />
+              </svg>
+              <div class="skill-ring-value">0%</div>
+            </div>
+            <div class="skill-tags">
+              <span class="tag-pill">Semantic</span>
+              <span class="tag-pill">Accessibility</span>
+              <span class="tag-pill">Structure</span>
+            </div>
+          </div>
+
+          <!-- Skill 6: CSS3 & Layouts -->
+          <div class="skill-card reveal reveal-delay-1">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-brands fa-css3-alt"></i>
+              </div>
+              <h3 class="skill-title">CSS3 & Layouts</h3>
+            </div>
+            <div class="skill-ring-wrapper">
+              <svg class="skill-ring-svg" viewBox="0 0 100 100">
+                <circle class="skill-ring-bg" cx="50" cy="50" r="38" stroke-width="7" fill="none" />
+                <circle class="skill-ring-progress" cx="50" cy="50" r="38" stroke-width="7" fill="none" stroke-linecap="round" data-target="80" />
+              </svg>
+              <div class="skill-ring-value">0%</div>
+            </div>
+            <div class="skill-tags">
+              <span class="tag-pill">Flexbox & Grid</span>
+              <span class="tag-pill">Glassmorphism</span>
+              <span class="tag-pill">Responsive</span>
+            </div>
+          </div>
+
+          <!-- Skill 7: PowerBI & Analytics -->
+          <div class="skill-card reveal reveal-delay-2">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <h3 class="skill-title">PowerBI & Analytics</h3>
+            </div>
+            <div class="skill-ring-wrapper">
+              <svg class="skill-ring-svg" viewBox="0 0 100 100">
+                <circle class="skill-ring-bg" cx="50" cy="50" r="38" stroke-width="7" fill="none" />
+                <circle class="skill-ring-progress" cx="50" cy="50" r="38" stroke-width="7" fill="none" stroke-linecap="round" data-target="85" />
+              </svg>
+              <div class="skill-ring-value">0%</div>
+            </div>
+            <div class="skill-tags">
+              <span class="tag-pill">Dashboards</span>
+              <span class="tag-pill">DAX Queries</span>
+              <span class="tag-pill">Data Insights</span>
+            </div>
+          </div>
+
+          <!-- Skill 8: SQL & Databases -->
+          <div class="skill-card reveal reveal-delay-3">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <h3 class="skill-title">SQL & Databases</h3>
+            </div>
+            <div class="skill-ring-wrapper">
+              <svg class="skill-ring-svg" viewBox="0 0 100 100">
+                <circle class="skill-ring-bg" cx="50" cy="50" r="38" stroke-width="7" fill="none" />
+                <circle class="skill-ring-progress" cx="50" cy="50" r="38" stroke-width="7" fill="none" stroke-linecap="round" data-target="60" />
+              </svg>
+              <div class="skill-ring-value">0%</div>
+            </div>
+            <div class="skill-tags">
+              <span class="tag-pill">SQLite</span>
+              <span class="tag-pill">Queries</span>
+              <span class="tag-pill">Schema Design</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. FEATURED PROJECTS TEASER
+         ======================================================================== -->
+    <section id="featured-projects">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-eyebrow">Selected Work</div>
+          <h2 class="section-heading">Featured Projects</h2>
+          <p class="section-subtitle">
+            A glimpse into my work across local LLM systems, recommendation models, and predictive text classification.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Offline AI Assistant -->
+          <div class="project-card reveal">
+            <div class="project-media-wrapper">
+              <img src="images/chatbot.png" alt="Offline AI Assistant Preview" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <span class="project-category-badge">AI & Local LLM</span>
+              <h3 class="project-title">Offline AI Assistant</h3>
+              <p class="project-desc">
+                Offline AI Chatbot powered by Ollama. Enables users to run and switch between multiple local LLMs with zero internet dependency, ensuring maximum privacy.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Ollama</span>
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">Local LLM</span>
+                <span class="tag-pill">Streamlit</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/Offline_AI_Assistant.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
+                </a>
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: PriceSense Engine -->
+          <div class="project-card reveal reveal-delay-1">
+            <div class="project-media-wrapper">
+              <img src="images/pricesense.png" alt="PriceSense Engine Preview" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <span class="project-category-badge">AI & Recommendation</span>
+              <h3 class="project-title">PriceSense Engine</h3>
+              <p class="project-desc">
+                Electronic Items Recommendation System using Python & SerpAPI. Gathers product pricing in real time, computes customer sentiment scores, and recommends best buying stores.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">SerpAPI</span>
+                <span class="tag-pill">Recommendation</span>
+                <span class="tag-pill">Sentiment</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/PriceSense.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
+                </a>
+                <a href="https://personal-expense-tracker-02.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Fake News Detection -->
+          <div class="project-card reveal reveal-delay-2">
+            <div class="project-media-wrapper">
+              <img src="images/home.png" alt="Fake News Detection Preview" loading="lazy" />
+            </div>
+            <div class="project-content">
+              <span class="project-category-badge">Machine Learning & NLP</span>
+              <h3 class="project-title">Fake News Detection</h3>
+              <p class="project-desc">
+                Machine learning fake news classifier built with Python and Logistic Regression. Uses NLP vectorization to predict authenticity of news articles with high precision.
+              </p>
+              <div class="tag-group project-tags">
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">NLP</span>
+                <span class="tag-pill">Scikit-Learn</span>
+                <span class="tag-pill">Streamlit</span>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/Anuj04432/Fake_News_Detection.git" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                  <i class="fa-brands fa-github"></i> Code
+                </a>
+                <a href="https://fakenewsdetection-anuj.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
+          <a href="projects.html" class="btn btn-primary" style="padding: 0.85rem 2.2rem;">
+            <span>View All 8 Projects</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. CONTACT SECTION (#contact)
+         ======================================================================== -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header-center reveal">
+          <div class="section-eyebrow">Get In Touch</div>
+          <h2 class="section-heading">Let's Build Something Intelligent</h2>
+          <p class="section-subtitle">
+            Have a project in mind, an AI engineering role, or a machine learning opportunity? Send a message directly.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Left: Contact Form -->
+          <div class="contact-form-panel reveal">
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contactName" class="form-label">Your Name</label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Alex Johnson" required />
               </div>
 
-              <div class="cli-input-group">
-                <label for="cliEmail" class="cli-label">
-                  <span class="arg">Email</span> &gt;
-                </label>
-                <input type="email" id="cliEmail" class="cli-input" placeholder="Your Email Address" required autocomplete="email" />
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email Address</label>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="e.g. alex@example.com" required />
               </div>
 
-              <div class="cli-input-group">
-                <label for="cliMessage" class="cli-label">
-                  <span class="arg">Message</span> &gt;
-                </label>
-                <textarea id="cliMessage" class="cli-textarea" placeholder="Type your message or project proposal here..." required></textarea>
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Message</label>
+                <textarea id="contactMessage" name="message" class="form-textarea" rows="5" placeholder="Describe your project, team requirements, or collaboration idea..." required></textarea>
               </div>
 
-              <!-- Terminal Live Console Feedback Log -->
-              <div class="cli-console-feedback" id="cliFeedbackConsole">
-                <span>[READY] Enter message details and click Send...</span>
-              </div>
-
-              <button type="submit" id="cliSubmitBtn" class="btn-terminal primary">
-                <i class="fa-solid fa-paper-plane"></i> [ SEND_MESSAGE ]
+              <button type="submit" id="contactSubmitBtn" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
               </button>
+
+              <div id="contactFeedback" class="form-feedback" role="alert" aria-live="polite"></div>
             </form>
           </div>
 
-          <!-- Right: Personal Info Panel -->
-          <div class="contact-info-panel reveal-right">
-            <div>
-              <div class="card-header-bar">
-                <span class="card-tag">// CONNECT</span>
-                <span class="card-tag">STATUS: REACHABLE</span>
-              </div>
-
-              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1rem;">
+          <!-- Right: Info Panel -->
+          <div class="contact-info-panel reveal reveal-delay-1">
+            <div class="contact-info-top">
+              <h3>Direct Channels</h3>
+              <p>
                 Feel free to reach out for machine learning opportunities, AI engineering positions, or full-stack software development projects.
               </p>
 
-              <ul class="contact-info-list">
-                <li class="contact-info-item">
-                  <div class="info-icon-box"><i class="fa-solid fa-envelope"></i></div>
-                  <div class="info-details">
-                    <span class="info-label">Email</span>
-                    <a href="mailto:anujwagmore8@gmail.com" class="info-val">anujwagmore8@gmail.com</a>
+              <div class="contact-links-list">
+                <!-- Email -->
+                <a href="mailto:anujwagmore8@gmail.com" class="contact-link-item">
+                  <div class="contact-link-icon">
+                    <i class="fa-solid fa-envelope"></i>
                   </div>
-                </li>
+                  <div class="contact-link-text">
+                    <span class="label">Email Address</span>
+                    <span class="val">anujwagmore8@gmail.com</span>
+                  </div>
+                </a>
 
-                <li class="contact-info-item">
-                  <div class="info-icon-box"><i class="fa-brands fa-github"></i></div>
-                  <div class="info-details">
-                    <span class="info-label">GitHub</span>
-                    <a href="https://github.com/Anuj04432" target="_blank" rel="noopener noreferrer" class="info-val">github.com/Anuj04432</a>
+                <!-- GitHub -->
+                <a href="https://github.com/Anuj04432" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                  <div class="contact-link-icon">
+                    <i class="fa-brands fa-github"></i>
                   </div>
-                </li>
+                  <div class="contact-link-text">
+                    <span class="label">GitHub</span>
+                    <span class="val">github.com/Anuj04432</span>
+                  </div>
+                </a>
 
-                <li class="contact-info-item">
-                  <div class="info-icon-box"><i class="fa-brands fa-linkedin"></i></div>
-                  <div class="info-details">
-                    <span class="info-label">LinkedIn</span>
-                    <a href="https://www.linkedin.com/in/anuj-wagmore-874a883a7/" target="_blank" rel="noopener noreferrer" class="info-val">linkedin.com/in/anuj-wagmore</a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/anuj-wagmore-874a883a7/" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                  <div class="contact-link-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
                   </div>
-                </li>
+                  <div class="contact-link-text">
+                    <span class="label">LinkedIn</span>
+                    <span class="val">linkedin.com/in/anuj-wagmore</span>
+                  </div>
+                </a>
 
-                <li class="contact-info-item">
-                  <div class="info-icon-box"><i class="fa-solid fa-location-crosshairs"></i></div>
-                  <div class="info-details">
-                    <span class="info-label">Location</span>
-                    <span class="info-val">India (Open to Remote Worldwide)</span>
+                <!-- Location -->
+                <div class="contact-link-item">
+                  <div class="contact-link-icon">
+                    <i class="fa-solid fa-location-dot"></i>
                   </div>
-                </li>
-              </ul>
+                  <div class="contact-link-text">
+                    <span class="label">Location</span>
+                    <span class="val">India (Open to Remote Worldwide)</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="telemetry-item" style="border: 1px solid var(--border-subtle);">
-              <span class="telemetry-label">PROFILE_VERIFICATION</span>
-              <span class="telemetry-val" style="font-size: 0.8rem; color: var(--neon-green);">AI & Machine Learning Engineer</span>
+            <div style="margin-top: 2rem;">
+              <div class="hero-badge-pill" style="margin-bottom: 0;">
+                <span class="status-dot"></span>
+                <span>Open for Full-Time & Contract Roles</span>
+              </div>
             </div>
           </div>
 
@@ -709,26 +719,30 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="cyber-footer">
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-left">
-          <span>&copy; 2026 Anuj Wagmore. Built with AI & Terminal Aesthetics.</span>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span>Anuj Wagmore</span>
+          <span class="brand-badge">AI Lab</span>
         </div>
-        <div>
-          <span style="color: var(--neon-green);">AI SYSTEMS READY</span>
+
+        <div class="footer-copy">
+          &copy; 2026 Anuj Wagmore. All rights reserved.
+        </div>
+
+        <div class="footer-badge">
+          <span class="status-dot"></span>
+          <span>Available for AI/ML roles</span>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button class="back-to-top-btn" id="backToTop" title="Return to Top" aria-label="Return to Top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
-  <!-- Modular Scripts -->
+  <!-- Scripts -->
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
 </body>
