@@ -18,10 +18,16 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/animations.css" />
 
+  <!-- Three.js 3D Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
+
+  <!-- 3D Particle Neural Brain Canvas -->
+  <canvas id="neuralBrain3D" class="neural-brain-3d-canvas"></canvas>
 
   <!-- Ambient Drifting Gradient Blobs & Texture -->
   <div class="ambient-bg-container" aria-hidden="true">
@@ -743,6 +749,7 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/neural-brain-3d.js"></script>
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
 </body>
