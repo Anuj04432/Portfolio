@@ -4,11 +4,61 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  initThemeToggle();
   initNavbar();
   initRoleSwitcher();
   initScrollReveals();
   initSkillRings();
 });
+
+/* ==========================================================================
+   0. Theme Toggle & Local Storage
+   ========================================================================== */
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle');
+  if (!themeToggle) return;
+
+  const icon = themeToggle.querySelector('i');
+  
+  // Detect saved theme or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  
+  // Set initial theme
+  if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+    document.documentElement.setAttribute('data-theme', 'light');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    // Add transition class to body for smooth animation
+    document.body.classList.add('theme-transition');
+    
+    // Determine new theme
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    // Apply new theme
+    if (newTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    }
+    
+    // Save to local storage
+    localStorage.setItem('theme', newTheme);
+    
+    // Remove transition class after animation completes (400ms)
+    setTimeout(() => {
+      document.body.classList.remove('theme-transition');
+    }, 400);
+  });
+}
 
 /* ==========================================================================
    1. Navbar & Mobile Menu Interaction
